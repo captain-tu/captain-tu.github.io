@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sailor Sinbad</title>
+  
+  <subtitle>Sinbad</subtitle>
+  <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://captain-tu.github.io/"/>
+  <updated>2022-04-17T11:51:08.190Z</updated>
+  <id>https://captain-tu.github.io/</id>
+  
+  <author>
+    <name>Sinbad</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Matery 建站</title>
+    <link href="https://captain-tu.github.io/2022/01/02/hexo-matery/"/>
+    <id>https://captain-tu.github.io/2022/01/02/hexo-matery/</id>
+    <published>2022-01-01T16:00:00.000Z</published>
+    <updated>2022-04-17T11:51:08.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为&lt;code&gt;Hexo&lt;/code&gt;博客主题&lt;code&gt;Matery&lt;/code&gt;在本网站的一些使用情况和改动，&lt;strong&gt;作者&lt;/strong&gt;将对本网站的建立过程进行记录，记录内容主要涵盖&lt;strong&gt;主题原作者&lt;/stron</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="https://captain-tu.github.io/categories/Hexo/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://captain-tu.github.io/2022/01/01/hello-world/"/>
+    <id>https://captain-tu.github.io/2022/01/01/hello-world/</id>
+    <published>2021-12-31T16:00:00.000Z</published>
+    <updated>2022-04-17T11:51:08.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="https://captain-tu.github.io/categories/Hexo/"/>
+    
+    
+  </entry>
+  
+</feed>

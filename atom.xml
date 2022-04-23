@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-04-17T11:51:08.190Z</updated>
+  <updated>2022-04-23T13:59:13.755Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MongoDB 使用问题记录</title>
+    <link href="https://captain-tu.github.io/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/"/>
+    <id>https://captain-tu.github.io/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/</id>
+    <published>2022-04-22T16:00:00.000Z</published>
+    <updated>2022-04-23T13:59:13.755Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要记录在项目当中集成&lt;code&gt;MongoDB&lt;/code&gt;作为日志存储库时遇到的一些问题。本文将会是一个关于&lt;code&gt;MongoDB&lt;/code&gt;使用的笼统记载，因为这也是作者第一次在项目当中集成&lt;code&gt;MongoDB&lt;/code&gt;，</summary>
+        
+      
+    
+    
+    
+    <category term="MongoDB" scheme="https://captain-tu.github.io/categories/MongoDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 并发编程的艺术 （一）</title>
+    <link href="https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/bing-fa-bian-cheng-de-yi-zhu-gai-lan/"/>
+    <id>https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/bing-fa-bian-cheng-de-yi-zhu-gai-lan/</id>
+    <published>2022-01-04T16:00:00.000Z</published>
+    <updated>2022-04-23T14:26:52.150Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文为《Java</summary>
+        
+      
+    
+    
+    
+    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo Matery 建站</title>

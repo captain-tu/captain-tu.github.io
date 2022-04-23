@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>MongoDB 使用问题记录</title>
+      <link href="/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/"/>
+      <url>/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文主要记录在项目当中集成<code>MongoDB</code>作为日志存储库时遇到的一些问题。本文将会是一个关于<code>MongoDB</code>使用的笼统记载，因为这也是作者第一次在项目当中集成<code>MongoDB</code>，针对许多问题并不全面了解，这里只能对在使用过程中遇到的一些零碎问题进行记录。</p></blockquote><h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><p>关于<code>MongoDB</code>更多技术及概念知识，可前往官方文档进行学习。<br>1、<a href="https://www.mongodb.com/">MongoDB 官网</a><br>2、<a href="https://www.mongodb.org.cn/">MongoDB 中文网</a></p><h2 id="MomgoDB-分页查询跳页过大导致查询失败"><a href="#MomgoDB-分页查询跳页过大导致查询失败" class="headerlink" title="MomgoDB 分页查询跳页过大导致查询失败"></a>MomgoDB 分页查询跳页过大导致查询失败</h2><p>默认缓存大小32MB</p><h2 id="Spring-Data-MongoDB-接入"><a href="#Spring-Data-MongoDB-接入" class="headerlink" title="Spring Data MongoDB 接入"></a>Spring Data MongoDB 接入</h2><h3 id="Spring-MongoDB-配置密码问题"><a href="#Spring-MongoDB-配置密码问题" class="headerlink" title="Spring MongoDB 配置密码问题"></a>Spring MongoDB 配置密码问题</h3><p>密码中含有特殊字符编码问题</p><h3 id="Spring-MongoDB-分页工具封装"><a href="#Spring-MongoDB-分页工具封装" class="headerlink" title="Spring MongoDB 分页工具封装"></a>Spring MongoDB 分页工具封装</h3><p>分页工具封装</p><h3 id="Spring-MongoDB-查询条件封装"><a href="#Spring-MongoDB-查询条件封装" class="headerlink" title="Spring MongoDB 查询条件封装"></a>Spring MongoDB 查询条件封装</h3><p>查询条件</p><h3 id="Spring-MongoDB-聚合分组查询"><a href="#Spring-MongoDB-聚合分组查询" class="headerlink" title="Spring MongoDB 聚合分组查询"></a>Spring MongoDB 聚合分组查询</h3><p>聚合分组</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MongoDB </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java 并发编程的艺术 （一）</title>
+      <link href="/2022/01/05/the-art-of-java-concurrency-programming/bing-fa-bian-cheng-de-yi-zhu-gai-lan/"/>
+      <url>/2022/01/05/the-art-of-java-concurrency-programming/bing-fa-bian-cheng-de-yi-zhu-gai-lan/</url>
+      
+        <content type="html"><![CDATA[<p>本文为《Java 并发编程的艺术》阅读阅读笔记一，主要涉及内容为该书内容的大致概括和梳理，并为后续的阅读笔记起一个总领提纲，方便以后在本文中按照提纲进行总结。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java Concurrency </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo Matery 建站</title>
       <link href="/2022/01/02/hexo-matery/"/>
       <url>/2022/01/02/hexo-matery/</url>

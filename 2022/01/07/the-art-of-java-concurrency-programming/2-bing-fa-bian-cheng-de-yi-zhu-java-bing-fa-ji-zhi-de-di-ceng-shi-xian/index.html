@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java 并发编程的艺术（二）, Blinkfox&#39;s blog site template">
-    <meta name="description" content="本文为《Java 并发编程的艺术》阅读笔记二，主要内容为Java并发编程的底层机制，分别从volatile、synchronized、原子操作的实现原理三个方面Java并发编程的底层机制。
-">
+    <meta name="keywords" content="Java 并发编程的艺术（二）（并发机制的底层实现）, Blinkfox&#39;s blog site template">
+    <meta name="description" content="
+本文为《Java 并发编程的艺术》阅读笔记二，主要内容为Java并发编程的底层机制，分别从volatile、synchronized、原子操作的实现原理三个方面Java并发编程的底层机制。
+
+volatial的应用volatial的定义及">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +31,7 @@
     </style>
 
 
-    <title>Java 并发编程的艺术（二） | Sailor Sinbad</title>
+    <title>Java 并发编程的艺术（二）（并发机制的底层实现） | Sailor Sinbad</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -317,7 +319,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '8541c2d149faea7b7e534fcd56f5d352c7ed5a620d81394c002a17f07e18a567';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -330,12 +332,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/%E5%B0%81%E9%9D%A2/Learn.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java 并发编程的艺术（二）</h1>
+                    <h1 class="description center-align post-title">Java 并发编程的艺术（二）（并发机制的底层实现）</h1>
                 </div>
             </div>
         </div>
@@ -481,7 +483,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    59
+                    1.1k
                 </div>
                 
 
@@ -501,8 +503,63 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文为<strong>《Java 并发编程的艺术》</strong>阅读笔记二，主要内容为Java并发编程的底层机制，分别从<code>volatile</code>、<code>synchronized</code>、<code>原子操作的实现原理</code>三个方面Java并发编程的底层机制。</p>
+                <blockquote>
+<p>本文为<strong>《Java 并发编程的艺术》</strong>阅读笔记二，主要内容为Java并发编程的底层机制，分别从<code>volatile</code>、<code>synchronized</code>、<code>原子操作的实现原理</code>三个方面Java并发编程的底层机制。</p>
+</blockquote>
+<h2 id="volatial的应用"><a href="#volatial的应用" class="headerlink" title="volatial的应用"></a>volatial的应用</h2><h3 id="volatial的定义及实现原理"><a href="#volatial的定义及实现原理" class="headerlink" title="volatial的定义及实现原理"></a>volatial的定义及实现原理</h3><p><code>volatile</code>是Java提供的一种轻量级的同步机制。Java语言包含两种内在的同步机制：同步块（或方法）和 <code>volatile</code> 变量，相比于<code>synchronized</code>（<code>synchronized</code>通常称为重量级锁），<code>volatile</code>更轻量级，因为它不会引起线程上下文的切换和调度。但是<code>volatile</code>变量的同步性较差（有时它更简单并且开销更低），而且其使用也更容易出错。</p>
+<p>如果一个字段被声明为<code>volatile</code>变量，Java线程内存模型确保所有线程看到这个变量的值是一致的。</p>
+<p>若一个字段被定义为<code>volatile</code>：</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">// instance 是volatile变量</span>
+instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>转换成为汇编指令后：</p>
+<pre class="language-asm" data-language="asm"><code class="language-asm">0x01a3de1d: movb $0 X 0, 0 X 1104800(%esi);
+0x01a3de24: lock addl $0 X 0, (%esp);</code></pre>
 
+<p>有<code>volatile</code>变量修饰的共享变量在进行写操作时会多出第二行汇编代码，<code>Lock</code>前缀的指令在多核处理器下会做两件事情：</p>
+<ul>
+<li><strong>将当前处理器缓存行的数据写回到系统内存</strong></li>
+<li><strong>写回内存的操作会使在其它CPU里缓存了该内存地址的数据无效</strong></li>
+</ul>
+<p><code>Lock</code>前缀指令实际上相当于一个内存屏障（<code>Memory Barriers</code>），确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成。</p>
+<p>注：<code>内存屏障</code>（<code>Memory Barriers</code>）</p>
+<h3 id="volatial变量的特性"><a href="#volatial变量的特性" class="headerlink" title="volatial变量的特性"></a>volatial变量的特性</h3><p>1、保证共享变量的可见性，但不保证原子性。<br>2、禁止指令重排序：执行到<code>volatile</code>变量时，其前面的所有语句都执行完，后面所有语句都未执行。</p>
+<p>注：<code>指令重排序</code></p>
+<h3 id="volatial的优化及使用场景"><a href="#volatial的优化及使用场景" class="headerlink" title="volatial的优化及使用场景"></a>volatial的优化及使用场景</h3><p>优化：使用<strong>追加字节</strong>的方式将队列的<code>头尾节点</code>追加至合适字宽的缓存行，例如<code>Core Solo</code>和<code>Pentium M</code>处理器的缓存行为<code>64字宽</code>，不支持部分填充填充缓存行。这种情况有可能导致，在队列的头节点和尾节点都不足<code>64字宽</code>的时候，处理器会将他们都读到同一个高速<code>缓存行</code>，在多处理器下每个处理器都会在自己的高速缓存中缓存同样的头节点和尾节点。当一个处理器试图修改头节点时，会将当整个缓存行锁定（<code>缓存行锁定</code>），在<code>缓存一致性</code>作用下，其它处理器也就不能访问自己缓存中的尾节点。这将严重影响队列的入队和出队效率。</p>
+<p>注：<code>缓存行</code><br>注：<code>缓存一致性</code></p>
+<p>使用场景：首先针对<code>复合操作</code>，<code>volatile</code>是不适用的，因为其只保证了可见性而不保证原子性。例如当对<code>volatile</code>变量进行自增这样的复合操作时，会得到想象之外的结果，如下对<code>volatile</code>变量<code>count</code>进行自增操作，正常结果应该会是<code>10000</code>，但是每次运行结果都会不一致。</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">volatile</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">increase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">final</span> <span class="token class-name">Test</span> test <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token annotation punctuation">@Override</span>
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        test<span class="token punctuation">.</span><span class="token function">increase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">activeCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>运行结果可能是<code>9939</code>，<code>9829</code>等，原因在于<code>自增操作++</code>属于<code>复合操作</code>，其分解后总共包含三个操作：</p>
+<ul>
+<li>读取count的值</li>
+<li>将读取到的count进行加1操作</li>
+<li>将加1操作后的值赋给count变量地址</li>
+</ul>
+<p>在该过程中，<code>volatile</code>的作用便是只保证了第一步对所有线程而言都是顺序执行，但是当其中一个线程第一步拿到最新的值进行后面两个操作时，此时其它线程写入新的<code>count</code>值，那么这个线程拿到的<code>count</code>值就不是最新的，其结果便是导致最后结果<code>count</code>变量值低于预期值。</p>
+<h2 id="synchronized的应用"><a href="#synchronized的应用" class="headerlink" title="synchronized的应用"></a>synchronized的应用</h2><h3 id="Java对象头"><a href="#Java对象头" class="headerlink" title="Java对象头"></a>Java对象头</h3><h3 id="锁的升级和对比"><a href="#锁的升级和对比" class="headerlink" title="锁的升级和对比"></a>锁的升级和对比</h3><h2 id="原子操作的实现原理"><a href="#原子操作的实现原理" class="headerlink" title="原子操作的实现原理"></a>原子操作的实现原理</h2>
                 
             </div>
             <hr/>
@@ -618,7 +675,7 @@
                 <a href="/2022/01/08/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Learn.jpg" class="responsive-img" alt="Java 并发编程的艺术（三）（Java内存模型一）">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Concurrency-Art.png" class="responsive-img" alt="Java 并发编程的艺术（三）（Java内存模型一）">
                         
                         <span class="card-title">Java 并发编程的艺术（三）（Java内存模型一）</span>
                     </div>
@@ -658,9 +715,9 @@
                 <a href="/2022/01/06/the-art-of-java-concurrency-programming/1-bing-fa-bian-cheng-de-yi-zhu-bing-fa-bian-cheng-de-tiao-zhan/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Learn.jpg" class="responsive-img" alt="Java 并发编程的艺术（一）">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Concurrency-Art.png" class="responsive-img" alt="Java 并发编程的艺术（一）（并发编程的挑战）">
                         
-                        <span class="card-title">Java 并发编程的艺术（一）</span>
+                        <span class="card-title">Java 并发编程的艺术（一）（并发编程的挑战）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -818,7 +875,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.8k</span>
+                        class="white-color">5.3k</span>
             
             
             

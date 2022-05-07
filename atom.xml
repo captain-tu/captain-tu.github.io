@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-04-24T13:34:13.459Z</updated>
+  <updated>2022-05-07T11:26:51.998Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Sentinel 限流集成和上线改造</title>
+    <link href="https://captain-tu.github.io/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
+    <id>https://captain-tu.github.io/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</id>
+    <published>2022-04-30T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:51.998Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为项目集成Sentinel进行限流降级的解决方案和上线改造内容。通过对Sentinel的控制台进行深度改造和集成，可以使项目内所有微服务的资源规则能够动态的修改和新增，各个服务可以及时监听并更新规则。本文改造方案基于Nacos配置中心进</summary>
+        
+      
+    
+    
+    
+    <category term="Sentinel" scheme="https://captain-tu.github.io/categories/Sentinel/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sentinel 高可用流量控制组件</title>
+    <link href="https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/"/>
+    <id>https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/</id>
+    <published>2022-04-29T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:51.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel</summary>
+        
+      
+    
+    
+    
+    <category term="Sentinel" scheme="https://captain-tu.github.io/categories/Sentinel/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>MongoDB 使用问题记录</title>
     <link href="https://captain-tu.github.io/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/"/>
     <id>https://captain-tu.github.io/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/</id>
     <published>2022-04-22T16:00:00.000Z</published>
-    <updated>2022-04-24T13:34:13.459Z</updated>
+    <updated>2022-05-07T11:26:52.040Z</updated>
     
     
       
@@ -41,18 +89,95 @@
   </entry>
   
   <entry>
+    <title>MongoDB 权威指南</title>
+    <link href="https://captain-tu.github.io/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/"/>
+    <id>https://captain-tu.github.io/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/</id>
+    <published>2022-03-31T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:52.036Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为&lt;code&gt;《MongoDB权威指南》&lt;/code&gt;学习整理记录。涉及MongoDB数据库，集合，文档，数据类型等基础知识，以及MongoDB的应用、运维和优化等。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="MongoDB" scheme="https://captain-tu.github.io/categories/MongoDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分布式高性能可定制化统一发号器</title>
+    <link href="https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
+    <id>https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</id>
+    <published>2022-02-14T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:52.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文内容主要涉及可定制化的统一发号器的解决方案及实现过程。统一发号器的方案前提是必须满足业务需求，支持定制化，同时需要满足分布式高性能的要求。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 并发编程的艺术（四）（Java并发编程基础）</title>
+    <link href="https://captain-tu.github.io/2022/01/10/the-art-of-java-concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/"/>
+    <id>https://captain-tu.github.io/2022/01/10/the-art-of-java-concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/</id>
+    <published>2022-01-09T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:52.079Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+        
+      
+    
+    
+    
+    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java 并发编程的艺术（三）（Java内存模型二）</title>
     <link href="https://captain-tu.github.io/2022/01/09/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/"/>
     <id>https://captain-tu.github.io/2022/01/09/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/</id>
     <published>2022-01-08T16:00:00.000Z</published>
-    <updated>2022-04-24T13:59:29.751Z</updated>
+    <updated>2022-05-07T11:26:52.075Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
         
       
     
@@ -68,14 +193,15 @@
     <link href="https://captain-tu.github.io/2022/01/08/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/"/>
     <id>https://captain-tu.github.io/2022/01/08/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/</id>
     <published>2022-01-07T16:00:00.000Z</published>
-    <updated>2022-04-24T13:59:26.496Z</updated>
+    <updated>2022-05-07T11:26:52.069Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
         
       
     
@@ -87,18 +213,19 @@
   </entry>
   
   <entry>
-    <title>Java 并发编程的艺术（二）</title>
+    <title>Java 并发编程的艺术（二）（并发机制的底层实现）</title>
     <link href="https://captain-tu.github.io/2022/01/07/the-art-of-java-concurrency-programming/2-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-ji-zhi-de-di-ceng-shi-xian/"/>
     <id>https://captain-tu.github.io/2022/01/07/the-art-of-java-concurrency-programming/2-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-ji-zhi-de-di-ceng-shi-xian/</id>
     <published>2022-01-06T16:00:00.000Z</published>
-    <updated>2022-04-24T13:59:23.340Z</updated>
+    <updated>2022-05-07T11:26:52.062Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
         
       
     
@@ -110,18 +237,19 @@
   </entry>
   
   <entry>
-    <title>Java 并发编程的艺术（一）</title>
+    <title>Java 并发编程的艺术（一）（并发编程的挑战）</title>
     <link href="https://captain-tu.github.io/2022/01/06/the-art-of-java-concurrency-programming/1-bing-fa-bian-cheng-de-yi-zhu-bing-fa-bian-cheng-de-tiao-zhan/"/>
     <id>https://captain-tu.github.io/2022/01/06/the-art-of-java-concurrency-programming/1-bing-fa-bian-cheng-de-yi-zhu-bing-fa-bian-cheng-de-tiao-zhan/</id>
     <published>2022-01-05T16:00:00.000Z</published>
-    <updated>2022-04-24T13:59:19.339Z</updated>
+    <updated>2022-05-07T11:26:52.055Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
         
       
     
@@ -133,18 +261,19 @@
   </entry>
   
   <entry>
-    <title>Java 并发编程的艺术（〇）</title>
+    <title>Java 并发编程的艺术（〇）（概览）</title>
     <link href="https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/0-bing-fa-bian-cheng-de-yi-zhu-gai-lan/"/>
     <id>https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/0-bing-fa-bian-cheng-de-yi-zhu-gai-lan/</id>
     <published>2022-01-04T16:00:00.000Z</published>
-    <updated>2022-04-24T14:02:54.739Z</updated>
+    <updated>2022-05-07T11:26:52.045Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
         
       
     
@@ -160,7 +289,7 @@
     <link href="https://captain-tu.github.io/2022/01/02/hexo-matery/"/>
     <id>https://captain-tu.github.io/2022/01/02/hexo-matery/</id>
     <published>2022-01-01T16:00:00.000Z</published>
-    <updated>2022-04-24T14:02:04.910Z</updated>
+    <updated>2022-05-07T11:26:52.029Z</updated>
     
     
       
@@ -184,7 +313,7 @@
     <link href="https://captain-tu.github.io/2022/01/01/hello-world/"/>
     <id>https://captain-tu.github.io/2022/01/01/hello-world/</id>
     <published>2021-12-31T16:00:00.000Z</published>
-    <updated>2022-04-24T14:01:58.785Z</updated>
+    <updated>2022-05-07T11:26:52.017Z</updated>
     
     
       

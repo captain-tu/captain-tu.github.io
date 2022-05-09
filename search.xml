@@ -4,9 +4,47 @@
   
     
     <entry>
+      <title>Nacos 服务注册发现和配置</title>
+      <link href="/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/"/>
+      <url>/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Nacos 致力于帮助您发现、配置和管理微服务。Nacos 提供了一组简单易用的特性集，帮助您快速实现动态服务发现、服务配置、服务元数据及流量管理。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Nacos </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring Cloud Gateway 介绍</title>
+      <link href="/2022/06/01/spring/cloud/01-springcloud-gateway/"/>
+      <url>/2022/06/01/spring/cloud/01-springcloud-gateway/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文主要内容为 Spring 生态系统之上的 API 网关的基础知识，该项目包括: Spring 5、 Spring Boot 2 和 Project Reactor。Spring Cloud Gateway 旨在提供一种简单而有效的方法来路由到 API，并为它们提供交叉关注点，如安全性、监视&#x2F;度量和弹性。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Cloud </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Sentinel 限流集成和上线改造</title>
-      <link href="/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
-      <url>/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</url>
+      <link href="/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
+      <url>/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</url>
       
         <content type="html"><![CDATA[<blockquote><p>本文主要内容为项目集成Sentinel进行限流降级的解决方案和上线改造内容。通过对Sentinel的控制台进行深度改造和集成，可以使项目内所有微服务的资源规则能够动态的修改和新增，各个服务可以及时监听并更新规则。本文改造方案基于Nacos配置中心进行规则的持久化，对各个微服务来说是底侵入性的。</p></blockquote>]]></content>
       
@@ -24,8 +62,8 @@
     
     <entry>
       <title>Sentinel 高可用流量控制组件</title>
-      <link href="/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/"/>
-      <url>/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/</url>
+      <link href="/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/"/>
+      <url>/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/</url>
       
         <content type="html"><![CDATA[<blockquote><p>随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式服务架构的流量控制组件，主要以流量为切入点，从限流、流量整形、熔断降级、系统负载保护、热点防护等多个维度来帮助开发者保障微服务的稳定性。</p></blockquote>]]></content>
       
@@ -90,6 +128,25 @@
       <categories>
           
           <category> Distribute </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java 并发编程的艺术（五）（Java中的锁）</title>
+      <link href="/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/"/>
+      <url>/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>本文为<strong>《Java 并发编程的艺术》</strong>阅读笔记五，主要内容为Java中的锁。将介绍Java并发包中与锁相关的API和组件，以及这些API和组件的使用方式和实现细节。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java Concurrency </category>
           
       </categories>
       

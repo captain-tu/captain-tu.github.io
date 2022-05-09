@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-05-07T11:26:51.998Z</updated>
+  <updated>2022-05-09T13:50:34.610Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -17,9 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Nacos 服务注册发现和配置</title>
+    <link href="https://captain-tu.github.io/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/"/>
+    <id>https://captain-tu.github.io/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/</id>
+    <published>2022-06-14T16:00:00.000Z</published>
+    <updated>2022-05-09T13:50:34.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Nacos 致力于帮助您发现、配置和管理微服务。Nacos</summary>
+        
+      
+    
+    
+    
+    <category term="Nacos" scheme="https://captain-tu.github.io/categories/Nacos/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Cloud Gateway 介绍</title>
+    <link href="https://captain-tu.github.io/2022/06/01/spring/cloud/01-springcloud-gateway/"/>
+    <id>https://captain-tu.github.io/2022/06/01/spring/cloud/01-springcloud-gateway/</id>
+    <published>2022-05-31T16:00:00.000Z</published>
+    <updated>2022-05-09T13:43:12.060Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为 Spring 生态系统之上的 API 网关的基础知识，该项目包括: Spring 5、 Spring Boot 2 和 Project Reactor。Spring Cloud Gateway 旨在提供一种简单而有效的方法来路由到</summary>
+        
+      
+    
+    
+    
+    <category term="Spring Cloud" scheme="https://captain-tu.github.io/categories/Spring-Cloud/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Sentinel 限流集成和上线改造</title>
-    <link href="https://captain-tu.github.io/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
-    <id>https://captain-tu.github.io/2022/05/01/alibaba/sentinel/sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</id>
+    <link href="https://captain-tu.github.io/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
+    <id>https://captain-tu.github.io/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</id>
     <published>2022-04-30T16:00:00.000Z</published>
     <updated>2022-05-07T11:26:51.998Z</updated>
     
@@ -42,8 +90,8 @@
   
   <entry>
     <title>Sentinel 高可用流量控制组件</title>
-    <link href="https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/"/>
-    <id>https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-he-xin-zheng-li/</id>
+    <link href="https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/"/>
+    <id>https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/</id>
     <published>2022-04-29T16:00:00.000Z</published>
     <updated>2022-05-07T11:26:51.992Z</updated>
     
@@ -136,6 +184,30 @@
     
     
     <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java 并发编程的艺术（五）（Java中的锁）</title>
+    <link href="https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/"/>
+    <id>https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</id>
+    <published>2022-01-10T16:00:00.000Z</published>
+    <updated>2022-05-09T12:46:24.396Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
+        
+      
+    
+    
+    
+    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
     
     
   </entry>

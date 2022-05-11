@@ -6,9 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Sentinel 高可用流量控制组件, Blinkfox&#39;s blog site template">
     <meta name="description" content="
-随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式服务架构的流量控制组件，主要以流量为切入点，从限流、流量整形、熔断降级、系统负载保护、热点防护等多个维度来帮助开发者保障微服务的稳定性。
-
-">
+随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式服务架构的流量控制组件，主要以流量为切入点，从限流、流量整形、熔断降级、系统负载保护、热点防护等多个维度来帮助开发者保障微服务的稳定性。本文主要涉及Se">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -483,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    94
+                    2.4k
                 </div>
                 
 
@@ -504,8 +502,147 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式服务架构的流量控制组件，主要以流量为切入点，从限流、流量整形、熔断降级、系统负载保护、热点防护等多个维度来帮助开发者保障微服务的稳定性。</p>
+<p>随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel 是面向分布式服务架构的流量控制组件，主要以流量为切入点，从限流、流量整形、熔断降级、系统负载保护、热点防护等多个维度来帮助开发者保障微服务的稳定性。本文主要涉及<code>Sentinel</code>内各种规则的基本概念和使用场景。<br>更多详情请参考：<a target="_blank" rel="noopener" href="https://sentinelguard.io/zh-cn/docs/introduction.html">官方文档</a></p>
 </blockquote>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><hr>
+<p>FlowSlot 会根据预设的规则，结合前面 <code>NodeSelectorSlot</code>、<code>ClusterNodeBuilderSlot</code>、<code>StatistcSlot</code> 统计出来的实时信息进行流量控制。</p>
+<p>限流的直接表现是在执行 <code>Entry nodeA = SphU.entry(资源名字)</code> 的时候抛出 <code>FlowException</code> 异常。<code>FlowException</code> 是 <code>BlockException</code> 的子类，您可以捕捉 BlockException 来自定义被限流之后的处理逻辑。</p>
+<p>同一个资源可以对应多条限流规则。<code>FlowSlot</code> 会对该资源的所有限流规则依次遍历，直到有规则触发限流或者所有规则遍历完毕。</p>
+<p>一条限流规则主要由下面几个因素组成，我们可以组合这些元素来实现不同的限流效果：</p>
+<ul>
+<li>resource：资源名，即限流规则的作用对象</li>
+<li>count: 限流阈值</li>
+<li>grade: 限流阈值类型，QPS 或线程数</li>
+<li>strategy: 根据调用关系选择策略</li>
+</ul>
+<h3 id="基于-QPS-x2F-并发数的流量控制"><a href="#基于-QPS-x2F-并发数的流量控制" class="headerlink" title="基于 QPS&#x2F;并发数的流量控制"></a>基于 QPS&#x2F;并发数的流量控制</h3><hr>
+<p>流量控制主要有两种统计类型，一种是统计<code>线程数</code>，另外一种则是统计 <code>QPS</code>。类型由 <code>FlowRule.grade</code> 字段来定义。其中，<code>0</code> 代表根据并发数量来限流，<code>1</code> 代表根据 <code>QPS</code> 来进行流量控制。其中<code>线程数</code>、<code>QPS</code> 值，都是由 <code>StatisticSlot</code> 实时统计获取的。</p>
+<p>可以通过下面的命令查看实时统计信息：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:8719/cnode?id<span class="token operator">=</span>resourceName</code></pre>
+<p>输出内容格式如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">idx</th>
+<th align="center">id</th>
+<th align="center">thread</th>
+<th align="center">pass</th>
+<th align="center">blocked</th>
+<th align="center">success</th>
+<th align="center">total</th>
+<th align="center">Rt</th>
+<th align="center">1m-pass</th>
+<th align="center">1m-block</th>
+<th align="center">1m-all</th>
+<th align="center">exeption</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">abc647</td>
+<td align="center">0</td>
+<td align="center">46</td>
+<td align="center">0</td>
+<td align="center">46</td>
+<td align="center">46</td>
+<td align="center">1</td>
+<td align="center">2763</td>
+<td align="center">0</td>
+<td align="center">2763</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<ul>
+<li>thread： 代表当前处理该资源的线程数；</li>
+<li>pass： 代表一秒内到来到的请求；</li>
+<li>blocked： 代表一秒内被流量控制的请求数量；</li>
+<li>success： 代表一秒内成功处理完的请求；</li>
+<li>total： 代表到一秒内到来的请求以及被阻止的请求总和；</li>
+<li>RT： 代表一秒内该资源的平均响应时间；</li>
+<li>1m-pass： 则是一分钟内到来的请求；</li>
+<li>1m-block： 则是一分钟内被阻止的请求；</li>
+<li>1m-all： 则是一分钟内到来的请求和被阻止的请求的总和；</li>
+<li>exception： 则是一秒内业务本身异常的总和。</li>
+</ul>
+<h4 id="并发线程数流量控制"><a href="#并发线程数流量控制" class="headerlink" title="并发线程数流量控制"></a>并发线程数流量控制</h4><hr>
+<p><code>线程数限流</code>用于保护业务线程数不被耗尽。</p>
+<p>例如，当应用所依赖的下游应用由于某种原因导致服务不稳定、响应延迟增加，对于调用者来说，意味着吞吐量下降和更多的线程数占用，极端情况下甚至导致线程池耗尽。为应对高线程占用的情况，业内有使用隔离的方案，比如通过不同业务逻辑使用不同线程池来隔离业务自身之间的资源争抢（线程池隔离），或者使用信号量来控制同时请求的个数（信号量隔离）。这种隔离方案虽然能够控制线程数量，但无法控制请求排队时间。当请求过多时排队也是无益的，直接拒绝能够迅速降低系统压力。<code>Sentinel线程数限流不负责创建和管理线程池，而是简单统计当前请求上下文的线程个数，如果超出阈值，新的请求会被立即拒绝</code>。</p>
+<h4 id="QPS流量控制"><a href="#QPS流量控制" class="headerlink" title="QPS流量控制"></a>QPS流量控制</h4><hr>
+<p>当 <code>QPS</code> 超过某个阈值的时候，则采取措施进行流量控制。流量控制的手段包括下面 3 种，对应 FlowRule 中的 controlBehavior 字段：</p>
+<p><code>直接拒绝</code>（RuleConstant.CONTROL_BEHAVIOR_DEFAULT）方式。该方式是默认的流量控制方式，当QPS超过任意规则的阈值后，新的请求就会被立即拒绝，拒绝方式为抛出FlowException。这种方式<strong>适用于对系统处理能力确切已知的情况下</strong>，比如通过压测确定了系统的准确水位时。具体的例子参见 FlowqpsDemo。</p>
+<p><code>冷启动</code>（RuleConstant.CONTROL_BEHAVIOR_WARM_UP）方式。该方式主要用于系统长期处于低水位的情况下，当流量突然增加时，直接把系统拉升到高水位可能瞬间把系统压垮。通过”冷启动”，<strong>让通过的流量缓慢增加</strong>，在一定时间内逐渐增加到阈值上限，给冷系统一个预热的时间，避免冷系统被压垮的情况。具体的例子参见 WarmUpFlowDemo。</p>
+<p>通常冷启动的过程系统允许通过的 QPS 曲线如下图所示：<br><img src="https://user-images.githubusercontent.com/9434884/68292392-b5b0aa00-00c6-11ea-86e1-ecacff8aab51.png" alt="Sentinel冷启动限流请求示意图"></p>
+<p><code>匀速排队</code>（RuleConstant.CONTROL_BEHAVIOR_RATE_LIMITER）方式会严格控制请求通过的间隔时间，也即是<strong>让请求以均匀的速度通过</strong>，对应的是漏桶算法。详细文档可以参考 流量控制 - 匀速器模式，具体的例子可以参见 PaceFlowDemo。</p>
+<p>该方式的作用如下图所示：<br><img src="https://user-images.githubusercontent.com/9434884/68292442-d4af3c00-00c6-11ea-8251-d0977366d9b4.png" alt="匀速排队限流方式请求示意图"><br>这种方式主要用于处理间隔性突发的流量，例如消息队列。想象一下这样的场景，在某一秒有大量的请求到来，而接下来的几秒则处于空闲状态，我们希望系统能够在接下来的空闲期间逐渐处理这些请求，而不是在第一秒直接拒绝多余的请求。</p>
+<h3 id="基于调用关系的流量控制"><a href="#基于调用关系的流量控制" class="headerlink" title="基于调用关系的流量控制"></a>基于调用关系的流量控制</h3><hr>
+<p>调用关系包括调用方、被调用方；一个方法又可能会调用其它方法，形成一个调用链路的层次关系。<code>Sentinel</code> 通过 <code>NodeSelectorSlot</code> 建立不同资源间的调用的关系，并且通过 <code>ClusterBuilderSlot</code> 记录每个资源的实时统计信息。</p>
+<p>有了调用链路的统计信息，我们可以衍生出多种流量控制手段。</p>
+<h4 id="根据调用方限流"><a href="#根据调用方限流" class="headerlink" title="根据调用方限流"></a>根据调用方限流</h4><hr>
+<p><code>ContextUtil.enter(resourceName, origin)</code> 方法中的 <code>origin</code> 参数标明了调用方身份。这些信息会在 <code>ClusterBuilderSlot</code> 中被统计。可通过以下命令来展示不同的调用方对同一个资源的调用数据：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> http://localhost:8719/origin?id<span class="token operator">=</span>nodeA</code></pre>
+<p>调用数据示例：<br>id: nodeA</p>
+<table>
+<thead>
+<tr>
+<th align="center">idx</th>
+<th align="center">origin</th>
+<th align="center">threadNum</th>
+<th align="center">passedQps</th>
+<th align="center">blockedQps</th>
+<th align="center">totalQps</th>
+<th align="center">aRt</th>
+<th align="center">1m-passed</th>
+<th align="center">1m-blocked</th>
+<th align="center">1m-total</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">caller1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">caller2</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>上面这个命令展示了资源名为 nodeA 的资源被两个不同的调用方调用的统计。</p>
+<p>流控规则中的 limitApp 字段用于根据调用来源进行流量控制。该字段的值有以下三种选项，分别对应不同的场景：</p>
+<p><code>default</code>：表示<strong>不区分调用者，来自任何调用者的请求都将进行限流统计</strong>。如果这个资源名的调用总和超过了这条规则定义的阈值，则触发限流。<br><code>&#123;some_origin_name&#125;</code>：表示<strong>针对特定的调用者，只有来自这个调用者的请求才会进行流量控制</strong>。例如 NodeA 配置了一条针对调用者caller1的规则，那么当且仅当来自 caller1 对 NodeA 的请求才会触发流量控制。<br><code>other</code>：表示<strong>针对除 {some_origin_name} 以外的其余调用方的流量进行流量控制</strong>。例如，资源NodeA配置了一条针对调用者 caller1 的限流规则，同时又配置了一条调用者为 other 的规则，那么任意来自非 caller1 对 NodeA 的调用，都不能超过 other 这条规则定义的阈值。</p>
+<p>同一个资源名可以配置多条规则，规则的生效顺序为：<code>&#123;some_origin_name&#125; &gt; other &gt; default</code></p>
+<h4 id="链路限流"><a href="#链路限流" class="headerlink" title="链路限流"></a>链路限流</h4><hr>
+<p><code>NodeSelectorSlot</code> 中记录了资源之间的调用链路，这些资源通过调用关系，相互之间构成一棵调用树。这棵树的根节点是一个名字为 <code>machine-root</code> 的虚拟节点，调用链的入口都是这个虚节点的子节点。</p>
+<p>一棵典型的调用树如下图所示：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">             machine-root
+              /       <span class="token punctuation">\</span>
+             /         <span class="token punctuation">\</span>
+       Entrance1     Entrance2
+          /             <span class="token punctuation">\</span>
+         /               <span class="token punctuation">\</span>
+DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punctuation">)</span>   DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punctuation">)</span></code></pre>
+<p>上图中来自入口 <code>Entrance1</code> 和 <code>Entrance2</code> 的请求都调用到了资源 NodeA，<code>Sentinel</code> <strong>允许只根据某个入口的统计信息对资源限流</strong>。比如我们可以设置 FlowRule.strategy 为 RuleConstant.CHAIN，同时设置 FlowRule.ref_identity 为 Entrance1 来表示只有从入口 Entrance1 的调用才会记录到 NodeA 的限流统计当中，而对来自 Entrance2 的调用漠不关心。</p>
+<p>调用链的入口是通过 API 方法 <code>ContextUtil.enter(name)</code> 定义的。</p>
+<h4 id="关联流量控制"><a href="#关联流量控制" class="headerlink" title="关联流量控制"></a>关联流量控制</h4><hr>
+<p><code>当两个资源之间具有资源争抢或者依赖关系的时候，这两个资源便具有了关联</code>。比如对数据库同一个字段的读操作和写操作存在争抢，读的速度过高会影响写得速度，写的速度过高会影响读的速度。如果放任读写操作争抢资源，则争抢本身带来的开销会降低整体的吞吐量。可使用关联限流来避免具有关联关系的资源之间过度的争抢，举例来说，<code>read_db</code> 和 <code>write_db</code> 这两个资源分别代表数据库读写，我们可以给 <code>read_db</code> 设置限流规则来达到写优先的目的：设置 <code>FlowRule.strategy</code> 为 <code>RuleConstant.RELATE</code> 同时设置 <code>FlowRule.ref_identity</code> 为 <code>write_db</code>。这样当写库操作过于频繁时，读数据的请求会被限流。</p>
+<h2 id="熔断降级"><a href="#熔断降级" class="headerlink" title="熔断降级"></a>熔断降级</h2><hr>
+<h2 id="热点参数"><a href="#热点参数" class="headerlink" title="热点参数"></a>热点参数</h2><hr>
+<h2 id="系统保护"><a href="#系统保护" class="headerlink" title="系统保护"></a>系统保护</h2><hr>
+<h2 id="来源控制"><a href="#来源控制" class="headerlink" title="来源控制"></a>来源控制</h2><hr>
 
                 
             </div>
@@ -822,7 +959,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.5k</span>
+                        class="white-color">7.9k</span>
             
             
             

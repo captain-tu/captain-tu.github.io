@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-05-09T13:50:34.610Z</updated>
+  <updated>2022-05-11T13:16:27.408Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XXL-JOB 分布式JOB调度平台 接入集成</title>
+    <link href="https://captain-tu.github.io/2022/07/01/xxl-job/01-xxl-job-jie-ru-ji-cheng/"/>
+    <id>https://captain-tu.github.io/2022/07/01/xxl-job/01-xxl-job-jie-ru-ji-cheng/</id>
+    <published>2022-06-30T16:00:00.000Z</published>
+    <updated>2022-05-11T13:16:27.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;XXL-JOB是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XXL-JOB 分布式JOB调度平台 介绍</title>
+    <link href="https://captain-tu.github.io/2022/06/30/xxl-job/01-xxl-job-jie-shao/"/>
+    <id>https://captain-tu.github.io/2022/06/30/xxl-job/01-xxl-job-jie-shao/</id>
+    <published>2022-06-29T16:00:00.000Z</published>
+    <updated>2022-05-11T13:16:20.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;XXL-JOB是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Nacos 服务注册发现和配置</title>
@@ -93,7 +145,7 @@
     <link href="https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/"/>
     <id>https://captain-tu.github.io/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/</id>
     <published>2022-04-29T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:51.992Z</updated>
+    <updated>2022-05-11T12:57:32.468Z</updated>
     
     
       

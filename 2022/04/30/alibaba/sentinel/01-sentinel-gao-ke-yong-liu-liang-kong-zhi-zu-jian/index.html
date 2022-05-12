@@ -481,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3.6k
                 </div>
                 
 
@@ -639,6 +639,109 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
 <p>调用链的入口是通过 API 方法 <code>ContextUtil.enter(name)</code> 定义的。</p>
 <h4 id="关联流量控制"><a href="#关联流量控制" class="headerlink" title="关联流量控制"></a>关联流量控制</h4><hr>
 <p><code>当两个资源之间具有资源争抢或者依赖关系的时候，这两个资源便具有了关联</code>。比如对数据库同一个字段的读操作和写操作存在争抢，读的速度过高会影响写得速度，写的速度过高会影响读的速度。如果放任读写操作争抢资源，则争抢本身带来的开销会降低整体的吞吐量。可使用关联限流来避免具有关联关系的资源之间过度的争抢，举例来说，<code>read_db</code> 和 <code>write_db</code> 这两个资源分别代表数据库读写，我们可以给 <code>read_db</code> 设置限流规则来达到写优先的目的：设置 <code>FlowRule.strategy</code> 为 <code>RuleConstant.RELATE</code> 同时设置 <code>FlowRule.ref_identity</code> 为 <code>write_db</code>。这样当写库操作过于频繁时，读数据的请求会被限流。</p>
+<h2 id="网关限流"><a href="#网关限流" class="headerlink" title="网关限流"></a>网关限流</h2><hr>
+<h3 id="网关流控实现原理"><a href="#网关流控实现原理" class="headerlink" title="网关流控实现原理"></a>网关流控实现原理</h3><hr>
+<p>当通过 <code>GatewayRuleManager</code> 加载网关流控规则（<code>GatewayFlowRule</code>）时，无论是否针对请求属性进行限流，<code>Sentinel</code> 底层都会将网关流控规则转化为热点参数规则（<code>ParamFlowRule</code>），存储在 <code>GatewayRuleManager</code> 中，与正常的热点参数规则相隔离。转换时 <code>Sentinel</code> 会根据请求属性配置，为网关流控规则设置参数索引（<code>idx</code>），并同步到生成的热点参数规则中。</p>
+<p>外部请求进入 <code>API Gateway</code> 时会经过 <code>Sentinel</code> 实现的 <code>filter</code>，其中会依次进行 <code>路由/API 分组匹配</code>、<code>请求属性解析</code>和<code>参数组装</code>。<code>Sentinel</code> 会根据配置的网关流控规则来解析请求属性，并依照参数索引顺序组装参数数组，最终传入 <code>SphU.entry(res, args)</code> 中。<code>Sentinel API Gateway Adapter Common</code> 模块向 <code>Slot Chain</code> 中添加了一个 <code>GatewayFlowSlot</code>，专门用来做网关规则的检查。<code>GatewayFlowSlot</code> 会从 <code>GatewayRuleManager</code> 中提取生成的热点参数规则，根据传入的参数依次进行规则检查。若某条规则不针对请求属性，则会在参数最后一个位置置入预设的常量，达到普通流控的效果。<br><img src="https://user-images.githubusercontent.com/9434884/58381786-5406f280-7ff4-11e9-9020-016ccaf7ab7d.png" alt="网关流控原理示意图"></p>
+<h3 id="网关流控控制台"><a href="#网关流控控制台" class="headerlink" title="网关流控控制台"></a>网关流控控制台</h3><hr>
+<p><code>Sentinel 1.6.3</code> 引入了网关流控控制台的支持，用户可以直接在 <code>Sentinel 控制台</code>上查看 <code>API Gateway</code> 实时的 <code>route</code> 和<code>自定义 API 分组</code>监控，管理<code>网关规则</code>和 <code>API 分组配置</code>。</p>
+<p>在 <code>API Gateway</code> 端，用户只需要在原有启动参数的基础上添加如下启动参数即可标记应用为 <code>API Gateway</code> 类型：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 注：通过 Spring Cloud Alibaba Sentinel 自动接入的 API Gateway 整合则无需此参数</span>
+-Dcsp.sentinel.app.type<span class="token operator">=</span><span class="token number">1</span></code></pre>
+
+<p>添加正确的启动参数并有访问量后，我们就可以在 Sentinel 上面看到对应的 API Gateway 了。我们可以查看实时的 route 和自定义 API 分组的监控和调用信息，并针对其配置规则：<br><img src="https://camo.githubusercontent.com/48d3f1037415b9214decfbff074dbeb4808971f7ef06a3937cec02523f6a3185/68747470733a2f2f73656e74696e656c67756172642e696f2f626c6f672f7a682d636e2f696d672f73656e74696e656c2d64617368626f6172642d6170692d676174657761792d726f7574652d6c6973742e706e67" alt="网关流控控制台"></p>
+<h3 id="Spring-Cloud-Gateway"><a href="#Spring-Cloud-Gateway" class="headerlink" title="Spring Cloud Gateway"></a>Spring Cloud Gateway</h3><hr>
+<p>从 1.6.0 版本开始，Sentinel 提供了 Spring Cloud Gateway 的适配模块，可以提供两种资源维度的限流：</p>
+<ul>
+<li>route 维度：即在 Spring 配置文件中配置的路由条目，资源名为对应的 routeId</li>
+<li>自定义 API 维度：用户可以利用 Sentinel 提供的 API 来自定义一些 API 分组<br>使用时需引入以下模块（以 Maven 为例）：</li>
+</ul>
+<pre class="language-pom" data-language="pom"><code class="language-pom">&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba.csp&lt;&#x2F;groupId&gt;
+    &lt;artifactId&gt;sentinel-spring-cloud-gateway-adapter&lt;&#x2F;artifactId&gt;
+    &lt;version&gt;x.y.z&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;</code></pre>
+<p>使用时只需注入对应的 SentinelGatewayFilter 实例以及 SentinelGatewayBlockExceptionHandler 实例即可（若使用了 Spring Cloud Alibaba Sentinel，则只需按照<a target="_blank" rel="noopener" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/Sentinel#spring-cloud-gateway-%E6%94%AF%E6%8C%81">文档</a>进行配置即可，无需自己加 Configuration）。比如：</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GatewayConfiguration</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ViewResolver</span><span class="token punctuation">></span></span> viewResolvers<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">ServerCodecConfigurer</span> serverCodecConfigurer<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">GatewayConfiguration</span><span class="token punctuation">(</span><span class="token class-name">ObjectProvider</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">ViewResolver</span><span class="token punctuation">></span><span class="token punctuation">></span></span> viewResolversProvider<span class="token punctuation">,</span>
+                                <span class="token class-name">ServerCodecConfigurer</span> serverCodecConfigurer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>viewResolvers <span class="token operator">=</span> viewResolversProvider<span class="token punctuation">.</span><span class="token function">getIfAvailable</span><span class="token punctuation">(</span><span class="token class-name">Collections</span><span class="token operator">::</span><span class="token function">emptyList</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>serverCodecConfigurer <span class="token operator">=</span> serverCodecConfigurer<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@Order</span><span class="token punctuation">(</span><span class="token class-name">Ordered</span><span class="token punctuation">.</span>HIGHEST_PRECEDENCE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">SentinelGatewayBlockExceptionHandler</span> <span class="token function">sentinelGatewayBlockExceptionHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// Register the block exception handler for Spring Cloud Gateway.</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SentinelGatewayBlockExceptionHandler</span><span class="token punctuation">(</span>viewResolvers<span class="token punctuation">,</span> serverCodecConfigurer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@Order</span><span class="token punctuation">(</span><span class="token class-name">Ordered</span><span class="token punctuation">.</span>HIGHEST_PRECEDENCE<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">GlobalFilter</span> <span class="token function">sentinelGatewayFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">SentinelGatewayFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>Demo 示例：<a target="_blank" rel="noopener" href="https://github.com/alibaba/Sentinel/tree/master/sentinel-demo/sentinel-demo-spring-cloud-gateway">sentinel-demo-spring-cloud-gateway</a></p>
+<p>比如我们在 Spring Cloud Gateway 中配置了以下路由：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8090</span>
+<span class="token key atrule">spring</span><span class="token punctuation">:</span>
+  <span class="token key atrule">application</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> spring<span class="token punctuation">-</span>cloud<span class="token punctuation">-</span>gateway
+  <span class="token key atrule">cloud</span><span class="token punctuation">:</span>
+    <span class="token key atrule">gateway</span><span class="token punctuation">:</span>
+      <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+        <span class="token key atrule">locator</span><span class="token punctuation">:</span>
+          <span class="token key atrule">lower-case-service-id</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+        <span class="token comment"># Add your routes here.</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> product_route
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> lb<span class="token punctuation">:</span>//product
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/product/<span class="token important">**</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">id</span><span class="token punctuation">:</span> httpbin_route
+          <span class="token key atrule">uri</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//httpbin.org
+          <span class="token key atrule">predicates</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> Path=/httpbin/<span class="token important">**</span>
+          <span class="token key atrule">filters</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> RewritePath=/httpbin/(<span class="token punctuation">?</span>&lt;segment<span class="token punctuation">></span>.<span class="token important">*)</span><span class="token punctuation">,</span> /$\<span class="token punctuation">&#123;</span>segment<span class="token punctuation">&#125;</span></code></pre>
+<p>同时自定义了一些 API 分组：</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">initCustomizedApis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApiDefinition</span><span class="token punctuation">></span></span> definitions <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ApiDefinition</span> api1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApiDefinition</span><span class="token punctuation">(</span><span class="token string">"some_customized_api"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">setPredicateItems</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApiPredicateItem</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ApiPathPredicateItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setPattern</span><span class="token punctuation">(</span><span class="token string">"/product/baz"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ApiPathPredicateItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setPattern</span><span class="token punctuation">(</span><span class="token string">"/product/foo/**"</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">setMatchStrategy</span><span class="token punctuation">(</span><span class="token class-name">SentinelGatewayConstants</span><span class="token punctuation">.</span>URL_MATCH_STRATEGY_PREFIX<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ApiDefinition</span> api2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApiDefinition</span><span class="token punctuation">(</span><span class="token string">"another_customized_api"</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">setPredicateItems</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ApiPredicateItem</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>
+            <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ApiPathPredicateItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setPattern</span><span class="token punctuation">(</span><span class="token string">"/ahas"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    definitions<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>api1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    definitions<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>api2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">GatewayApiDefinitionManager</span><span class="token punctuation">.</span><span class="token function">loadApiDefinitions</span><span class="token punctuation">(</span>definitions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>那么这里面的 route ID（如 product_route）和 API name（如 some_customized_api）都会被标识为 Sentinel 的资源。比如访问网关的 URL 为 <a target="_blank" rel="noopener" href="http://localhost:8090/product/foo/22">http://localhost:8090/product/foo/22</a> 的时候，对应的统计会加到 product_route 和 some_customized_api 这两个资源上面，而 <a target="_blank" rel="noopener" href="http://localhost:8090/httpbin/json">http://localhost:8090/httpbin/json</a> 只会对应到 httpbin_route 资源上面。</p>
+<p><strong>注意</strong>：</p>
+<p>有的时候 Spring Cloud Gateway 会自己在 route 名称前面拼一个前缀，如 ReactiveCompositeDiscoveryClient_xxx 这种。请观察簇点链路页面实际的资源名。</p>
+<p>您可以在 GatewayCallbackManager 注册回调进行定制：</p>
+<ul>
+<li>setBlockHandler：注册函数用于实现自定义的逻辑处理被限流的请求，对应接口为 BlockRequestHandler。默认实现为 DefaultBlockRequestHandler，当被限流时会返回类似于下面的错误信息：Blocked by Sentinel: FlowException。</li>
+</ul>
+<p><strong>注意</strong>：</p>
+<ul>
+<li>Sentinel 网关流控默认的粒度是 route 维度以及自定义 API 分组维度，默认不支持 URL 粒度。若通过 Spring Cloud Alibaba 接入，请将 spring.cloud.sentinel.filter.enabled 配置项置为 false（若在网关流控控制台上看到了 URL 资源，就是此配置项没有置为 false）。</li>
+<li>若使用 Spring Cloud Alibaba Sentinel 数据源模块，需要注意网关流控规则数据源类型是 gw-flow，若将网关流控规则数据源指定为 flow 则不生效。</li>
+</ul>
 <h2 id="熔断降级"><a href="#熔断降级" class="headerlink" title="熔断降级"></a>熔断降级</h2><hr>
 <h2 id="热点参数"><a href="#热点参数" class="headerlink" title="热点参数"></a>热点参数</h2><hr>
 <h2 id="系统保护"><a href="#系统保护" class="headerlink" title="系统保护"></a>系统保护</h2><hr>
@@ -959,7 +1062,7 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.9k</span>
+                        class="white-color">9.4k</span>
             
             
             

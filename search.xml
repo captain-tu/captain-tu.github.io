@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Distribute </category>
+          <category> XXL-JOB </category>
           
       </categories>
       
@@ -32,7 +32,7 @@
       
       <categories>
           
-          <category> Distribute </category>
+          <category> XXL-JOB </category>
           
       </categories>
       
@@ -204,6 +204,63 @@
       <categories>
           
           <category> Distribute </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring核心 MVC请求流程</title>
+      <link href="/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/"/>
+      <url>/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Spring MVC 是 Spring 在 Spring Container Core 和 AOP 等技术基础上，遵循 Web MVC 的规范推出的 Web 开发框架，目的是为了简化 Java 栈的 Web 开发。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Framework </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring 核心 面向切面编程</title>
+      <link href="/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/"/>
+      <url>/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>面向切面编程（<code>AOP—Aspect Oriented Programming</code>），AOP最早是AOP联盟的组织提出的，指定的一套规范，Spring将AOP的思想引入框架之中，<strong>通过预编译方式和运行期间动态代理</strong>实现程序的统一维护的一种技术。</p></blockquote><h2 id="AOP-介绍"><a href="#AOP-介绍" class="headerlink" title="AOP 介绍"></a>AOP 介绍</h2><hr><p>Spring 框架通过定义<code>切面</code>, 通过拦截<code>切点</code>实现了不同业务模块的解耦，这个就叫<strong>面向切面编程</strong> - <code>Aspect Oriented Programming</code> (AOP)</p><h3 id="AOP与OOP"><a href="#AOP与OOP" class="headerlink" title="AOP与OOP"></a>AOP与OOP</h3><hr><p>先来看一个例子， 如何给如下UserServiceImpl中所有方法添加进入方法的日志：</p><pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/** * @author Fei.Tu */</span><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">IUserService</span> <span class="token punctuation">&#123;</span>    <span class="token comment">/**     * find user list.     *     * @return user list     */</span>    <span class="token annotation punctuation">@Override</span>    <span class="token keyword">public</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">User</span><span class="token punctuation">></span></span> <span class="token function">findUserList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"execute method： findUserList"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token string">"pdai"</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">&#125;</span>    <span class="token comment">/**     * add user     */</span>    <span class="token annotation punctuation">@Override</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"execute method： addUser"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// do something</span>    <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span></code></pre><p>将记录日志功能解耦为日志切面，它的目标是解耦。进而引出AOP的理念：<strong>就是将分散在各个业务逻辑代码中相同的代码通过横向切割的方式抽取到一个独立的模块中</strong>！<br><img src="/%5Cimages%5Cspring%5Cframework%5Cspring-framework-aop-4.png" alt="纵向与横向切入"></p><p>OOP面向对象编程，针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程的某个步骤或阶段，以获得逻辑过程的中各部分之间低耦合的隔离效果。这两种设计思想在目标上有着本质的差异。<br><img src="/%5Cimages%5Cspring%5Cframework%5Cspring-framework-aop-2.png" alt="OOP与AOP比较"></p><h3 id="Spring-AOP-术语"><a href="#Spring-AOP-术语" class="headerlink" title="Spring AOP 术语"></a>Spring AOP 术语</h3><hr><p>首先从一些重要的AOP概念和术语开始。这些术语不是Spring特有的：</p><ul><li><code>连接点</code>（<strong>Jointpoint</strong>）：表示需要在程序中插入横切关注点的扩展点，连接点可能是类初始化、方法执行、方法调用、字段调用或处理异常等等，Spring只支持方法执行连接点，在AOP中表示为在哪里干； </li><li><code>切入点</code>（<strong>Pointcut</strong>）： 选择一组相关连接点的模式，即可以认为连接点的集合，Spring支持perl5正则表达式和AspectJ切入点模式，Spring默认使用AspectJ语法，在AOP中表示为在哪里干的集合； </li><li><code>通知</code>（<strong>Advice</strong>）：在连接点上执行的行为，通知提供了在AOP中需要在切入点所选择的连接点处进行扩展现有行为的手段；包括前置通知（before advice）、后置通知(after advice)、环绕通知（around advice），在Spring中通过代理模式实现AOP，并通过拦截器模式以环绕连接点的拦截器链织入通知；在AOP中表示为干什么； </li><li><code>方面/切面</code>（<strong>Aspect</strong>）：横切关注点的模块化，比如上边提到的日志组件。可以认为是通知、引入和切入点的组合；在Spring中可以使用Schema和@AspectJ方式进行组织实现；在AOP中表示为在哪干和干什么集合； </li><li><code>引入</code>（<strong>inter-type declaration</strong>）：也称为内部类型声明，为已有的类添加额外新的字段或方法，Spring允许引入新的接口（必须对应一个实现）到所有被代理对象（目标对象）, 在AOP中表示为干什么（引入什么）； </li><li><code>目标对象</code>（<strong>Target Object</strong>）：需要被织入横切关注点的对象，即该对象是切入点选择的对象，需要被通知的对象，从而也可称为被通知对象；由于Spring AOP 通过代理模式实现，从而这个对象永远是被代理对象，在AOP中表示为对谁干； </li><li><code>织入</code>（<strong>Weaving</strong>）：把切面连接到其它的应用程序类型或者对象上，并创建一个被通知的对象。这些可以在编译时（例如使用AspectJ编译器），类加载时和运行时完成。Spring和其他纯Java AOP框架一样，在运行时完成织入。在AOP中表示为怎么实现的； </li><li><code>AOP代理</code>（<strong>AOP Proxy</strong>）：AOP框架使用代理模式创建的对象，从而实现在连接点处插入通知（即应用切面），就是通过代理来对目标对象应用切面。在Spring中，AOP代理可以用JDK动态代理或CGLIB代理实现，而通过拦截器模型应用切面。在AOP中表示为怎么实现的一种典型方式；</li></ul><hr><ul><li><p>通知类型有以下五种：</p></li><li><p><code>前置通知</code>（<strong>Before advice</strong>）：在某连接点之前执行的通知，但这个通知不能阻止连接点之前的执行流程（除非它抛出一个异常）。 </p></li><li><p><code>后置通知</code>（<strong>After returning advice</strong>）：在某连接点正常完成后执行的通知：例如，一个方法没有抛出任何异常，正常返回。 </p></li><li><p><code>异常通知</code>（<strong>After throwing advice</strong>）：在方法抛出异常退出时执行的通知。 </p></li><li><p><code>最终通知</code>（<strong>After (finally) advice</strong>）：当某连接点退出的时候执行的通知（不论是正常返回还是异常退出）。 </p></li><li><p><code>环绕通知</code>（<strong>Around Advice</strong>）：包围一个连接点的通知，如方法调用。这是最强大的一种通知类型。环绕通知可以在方法调用前后完成自定义的行为。它也会选择是否继续执行连接点或直接返回它自己的返回值或抛出异常来结束执行。</p></li></ul><p><strong>环绕通知</strong>是最常用的通知类型。和<code>AspectJ</code>一样，<code>Spring</code>提供所有类型的通知，推荐使用尽可能简单的通知类型来实现需要的功能。例如，如果你只是需要一个方法的返回值来更新缓存，最好使用后置通知而不是环绕通知，尽管环绕通知也能完成同样的事情。用最合适的通知类型可以使得编程模型变得简单，并且能够避免很多潜在的错误。比如，你不需要在<code>JoinPoint</code>上调用用于环绕通知的<code>proceed()</code>方法，就不会有调用的问题。</p><p><img src="/images%5Cspring%5Cframework%5Cspring-framework-aop-3.png" alt="AOP术语联系"></p><h3 id="Spring-AOP-和-AspectJ"><a href="#Spring-AOP-和-AspectJ" class="headerlink" title="Spring AOP 和 AspectJ"></a>Spring AOP 和 AspectJ</h3><hr><p><code>AspectJ</code>是一个<code>Java</code>实现的AOP框架，它能够对Java代码进行AOP编译（一般在编译期进行），让Java代码具有AspectJ的AOP功能（当然需要特殊的编译器） 可以这样说AspectJ是目前实现AOP框架中最成熟，功能最丰富的语言，更幸运的是，AspectJ与Java程序完全兼容，几乎是无缝关联，因此对于有java编程基础的工程师，上手和使用都非常容易。</p><ul><li>AspectJ是更强的AOP框架，是<strong>实际意义的AOP标准</strong>； </li><li>Spring为何不写类似AspectJ的框架？ Spring AOP使用纯Java实现, 它不需要专门的编译过程, 它一个重要的原则就是无侵入性（non-invasiveness）; Spring 小组完全有能力写类似的框架，只是Spring AOP从来没有打算通过提供一种全面的AOP解决方案来与AspectJ竞争。Spring的开发小组相信<strong>无论是基于代理（proxy-based）的框架如Spring AOP或者是成熟的框架如AspectJ都是很有价值的</strong>，他们之间应该是互补而不是竞争的关系。 </li><li>Spring小组喜欢***@AspectJ注解风格更胜于Spring XML配置***；所以在Spring 2.0使用了和AspectJ 5一样的注解，并使用AspectJ来做切入点解析和匹配。但是，AOP在运行时仍旧是纯的Spring AOP，并不依赖于AspectJ的编译器或者织入器（weaver）。 </li><li>Spring 2.5对AspectJ的支持：在一些环境下，增加了<strong>对AspectJ的装载时编织支持</strong>，同时<strong>提供了一个新的bean切入点</strong>。</li></ul><p>了解AspectJ应用到Java代码的过程（这个过程称为织入），<code>对于织入这个概念，可以简单理解为aspect(切面)应用到目标函数(类)的过程</code>。 </p><p>对于这个过程，一般分为动态织入和静态织入： </p><ul><li><code>动态织入</code>的方式是<strong>在运行时动态将要增强的代码织入到目标类中</strong>，这样往往是通过动态代理技术完成的，如Java JDK的动态代理(Proxy，底层通过反射实现)或者CGLIB的动态代理(底层通过继承实现)，Spring AOP采用的就是基于运行时增强的代理技术。</li><li>ApectJ采用的就是<code>静态织入</code>的方式。ApectJ主要采用的是<strong>编译期织入，在这个期间使用AspectJ的acj编译器(类似javac)把aspect类编译成class字节码后，在java目标类编译时织入，即先编译aspect类再编译目标类</strong>。<br><img src="/%5Cimages%5Cspring%5Cframework%5Cspring-framework-aop-6.png" alt="ApectJ静态织入示意图"></li></ul><h2 id="AOP-配置方式"><a href="#AOP-配置方式" class="headerlink" title="AOP 配置方式"></a>AOP 配置方式</h2><h2 id="AOP-使用问题记录"><a href="#AOP-使用问题记录" class="headerlink" title="AOP 使用问题记录"></a>AOP 使用问题记录</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Framework </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring核心 控制反转</title>
+      <link href="/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/"/>
+      <url>/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>控制反转</strong>（<code>Ioc</code>—<code>Inversion of Control</code>），不是什么技术，而是一种设计思想。在Java开发中，Ioc意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制。</p></blockquote><h2 id="IoC-介绍"><a href="#IoC-介绍" class="headerlink" title="IoC 介绍"></a>IoC 介绍</h2><hr><h3 id="IoC是什么"><a href="#IoC是什么" class="headerlink" title="IoC是什么"></a>IoC是什么</h3><hr><p><code>Ioc—Inversion of Control</code>，即“<code>控制反转</code>”，不是什么技术，而是一种<code>设计思想</code>。在Java开发中，<strong>Ioc意味着将你设计好的对象交给容器控制，而不是传统的在你的对象内部直接控制</strong>。如何理解好Ioc呢？理解好Ioc的关键是要明确“谁控制谁，控制什么，为何是反转（有反转就应该有正转了），哪些方面反转了”，那我们来深入分析一下：</p><ul><li><p><code>谁控制谁，控制什么</code>：传统Java SE程序设计，我们直接在对象内部通过new进行创建对象，是程序主动去创建依赖对象；而IoC是有专门一个容器来创建这些对象，即<strong>由Ioc容器来控制对象的创建</strong>；谁控制谁？当然是<strong>IoC 容器控制了对象</strong>；控制什么？那就是<strong>主要控制了外部资源获取</strong>（不只是对象包括比如文件等）。</p></li><li><p><code>为何是反转，哪些方面反转了</code>：有反转就有正转，传统应用程序是由我们自己在对象中主动控制去直接获取依赖对象，也就是正转；而反转则是由容器来帮忙创建及注入依赖对象；为何是反转？因为由<strong>容器帮我们查找及注入依赖对象，对象只是被动的接受依赖对象，所以是反转</strong>；哪些方面反转了？<strong>依赖对象的获取被反转了</strong>。</p></li></ul><h3 id="IoC能做什么"><a href="#IoC能做什么" class="headerlink" title="IoC能做什么"></a>IoC能做什么</h3><hr><p><code>IoC不是一种技术，只是一种思想</code>，一个重要的面向对象编程的法则，它能指导我们如何设计出<strong>松耦合</strong>、更优良的程序。传统应用程序都是由我们在类内部主动创建依赖对象，从而导致类与类之间高耦合，难于测试；有了IoC容器后，把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以<strong>对象与对象之间是松散耦合，这样也方便测试，利于功能复用，更重要的是使得程序的整个体系结构变得非常灵活</strong>。</p><p>其实IoC对编程带来的最大改变不是从代码上，而是从思想上，发生了“主从换位”的变化。应用程序原本是老大，要获取什么资源都是主动出击，但是在IoC&#x2F;DI思想中，应用程序就变成被动的了，被动的等待IoC容器来创建并注入它所需要的资源了。</p><p>IoC很好的体现了面向对象设计法则之一—— 好莱坞法则：“别找我们，我们找你”；即<strong>由IoC容器帮对象找相应的依赖对象并注入，而不是由对象主动去找</strong>。</p><h3 id="IoC和DI"><a href="#IoC和DI" class="headerlink" title="IoC和DI"></a>IoC和DI</h3><hr><p><code>DI</code>—<code>Dependency Injection</code>，即“依赖注入”：是组件之间依赖关系由容器在运行期决定，形象的说，即由容器动态的将某个依赖关系注入到组件之中。依赖注入的目的并非为软件系统带来更多功能，而是为了提升组件重用的频率，并为系统搭建一个灵活、可扩展的平台。通过依赖注入机制，我们只需要通过简单的配置，而无需任何代码就可指定目标需要的资源，完成自身的业务逻辑，而不需要关心具体的资源来自何处，由谁实现。</p><p>理解DI的关键是：“谁依赖谁，为什么需要依赖，谁注入谁，注入了什么”，那我们来深入分析一下：</p><ul><li><code>谁依赖于谁</code>：当然是<strong>应用程序依赖于IoC容器</strong>；</li><li><code>为什么需要依赖</code>：<strong>应用程序需要IoC容器来提供对象需要的外部资源</strong>；</li><li><code>谁注入谁</code>：很明显是<strong>IoC容器注入应用程序某个对象——应用程序依赖的对象</strong>；</li><li><code>注入了什么</code>：就是<strong>注入某个对象所需要的外部资源</strong>（包括对象、资源、常量数据）。</li></ul><p><code>IoC</code>和<code>DI</code>由什么关系呢？其实它们是同一个概念的不同角度描述，由于控制反转概念比较含糊（可能只是理解为容器控制对象这一个层面，很难让人想到谁来维护对象关系），所以2004年大师级人物<code>Martin Fowler</code>又给出了一个新的名字：“依赖注入”，相对IoC 而言，“依赖注入”明确描述了“被注入对象依赖IoC容器配置依赖对象”。</p><p>更多关于<code>Martin Fowler</code>对于依赖注入描述的信息可阅读：《<a href="https://www.martinfowler.com/articles/injection.html">Inversion of Control Containers and the Dependency Injection pattern</a>》</p><h2 id="IoC-配置的三种方式"><a href="#IoC-配置的三种方式" class="headerlink" title="IoC 配置的三种方式"></a>IoC 配置的三种方式</h2><hr><h3 id="XML-配置方式"><a href="#XML-配置方式" class="headerlink" title="XML 配置方式"></a>XML 配置方式</h3><h3 id="Java-配置方式"><a href="#Java-配置方式" class="headerlink" title="Java 配置方式"></a>Java 配置方式</h3><h3 id="注解-配置方式"><a href="#注解-配置方式" class="headerlink" title="注解 配置方式"></a>注解 配置方式</h3><h2 id="依赖注入的三种方式"><a href="#依赖注入的三种方式" class="headerlink" title="依赖注入的三种方式"></a>依赖注入的三种方式</h2><hr><h3 id="setter-方式"><a href="#setter-方式" class="headerlink" title="setter 方式"></a>setter 方式</h3><h3 id="构造函数-方式"><a href="#构造函数-方式" class="headerlink" title="构造函数 方式"></a>构造函数 方式</h3><h3 id="注解注入-方式"><a href="#注解注入-方式" class="headerlink" title="注解注入 方式"></a>注解注入 方式</h3><p>以@Autowired（自动注入）注解注入为例，修饰符有三个属性：Constructor，byType，byName，默认按照byType注入。 </p><ul><li>constructor：通过构造方法进行自动注入，Spring会匹配与构造方法参数类型一致的bean进行注入，如果有一个多参数的构造方法，一个只有一个参数的构造方法，在容器中查找到多个匹配多参数构造方法的bean，那么spring会优先将bean注入到多参数的构造方法中。 </li><li>byName：被注入bean的id名必须与set方法后半截匹配，并且id名称的第一个单词首字母必须小写，这一点与手动set注入有点不同。 </li><li>byType：查找所有的set方法，将符合符合参数类型的bean注入。</li></ul><h2 id="IoC-与-DI-使用问题记录"><a href="#IoC-与-DI-使用问题记录" class="headerlink" title="IoC 与 DI 使用问题记录"></a>IoC 与 DI 使用问题记录</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Spring Framework </category>
           
       </categories>
       

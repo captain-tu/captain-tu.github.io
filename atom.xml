@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-05-11T13:16:27.408Z</updated>
+  <updated>2022-05-14T15:02:15.187Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://captain-tu.github.io/2022/07/01/xxl-job/01-xxl-job-jie-ru-ji-cheng/"/>
     <id>https://captain-tu.github.io/2022/07/01/xxl-job/01-xxl-job-jie-ru-ji-cheng/</id>
     <published>2022-06-30T16:00:00.000Z</published>
-    <updated>2022-05-11T13:16:27.408Z</updated>
+    <updated>2022-05-14T15:02:15.187Z</updated>
     
     
       
@@ -37,7 +37,7 @@
     
     
     
-    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    <category term="XXL-JOB" scheme="https://captain-tu.github.io/categories/XXL-JOB/"/>
     
     
   </entry>
@@ -47,7 +47,7 @@
     <link href="https://captain-tu.github.io/2022/06/30/xxl-job/01-xxl-job-jie-shao/"/>
     <id>https://captain-tu.github.io/2022/06/30/xxl-job/01-xxl-job-jie-shao/</id>
     <published>2022-06-29T16:00:00.000Z</published>
-    <updated>2022-05-11T13:16:20.006Z</updated>
+    <updated>2022-05-14T15:02:12.967Z</updated>
     
     
       
@@ -63,7 +63,7 @@
     
     
     
-    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
+    <category term="XXL-JOB" scheme="https://captain-tu.github.io/categories/XXL-JOB/"/>
     
     
   </entry>
@@ -289,6 +289,78 @@
   </entry>
   
   <entry>
+    <title>Spring核心 MVC请求流程</title>
+    <link href="https://captain-tu.github.io/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/"/>
+    <id>https://captain-tu.github.io/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/</id>
+    <published>2022-02-02T16:00:00.000Z</published>
+    <updated>2022-05-14T15:00:30.230Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Spring MVC 是 Spring 在 Spring Container Core 和 AOP 等技术基础上，遵循 Web MVC 的规范推出的 Web 开发框架，目的是为了简化 Java 栈的 Web</summary>
+        
+      
+    
+    
+    
+    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring 核心 面向切面编程</title>
+    <link href="https://captain-tu.github.io/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/"/>
+    <id>https://captain-tu.github.io/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/</id>
+    <published>2022-02-01T16:00:00.000Z</published>
+    <updated>2022-05-14T15:00:25.756Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;面向切面编程（&lt;code&gt;AOP—Aspect Oriented</summary>
+        
+      
+    
+    
+    
+    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring核心 控制反转</title>
+    <link href="https://captain-tu.github.io/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/"/>
+    <id>https://captain-tu.github.io/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/</id>
+    <published>2022-01-31T16:00:00.000Z</published>
+    <updated>2022-05-14T15:00:17.525Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;控制反转&lt;/strong&gt;（&lt;code&gt;Ioc&lt;/code&gt;—&lt;code&gt;Inversion of</summary>
+        
+      
+    
+    
+    
+    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java 并发编程的艺术（五）（Java中的锁）</title>
     <link href="https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/"/>
     <id>https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</id>
@@ -428,77 +500,6 @@
     
     
     <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（〇）（概览）</title>
-    <link href="https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/0-bing-fa-bian-cheng-de-yi-zhu-gai-lan/"/>
-    <id>https://captain-tu.github.io/2022/01/05/the-art-of-java-concurrency-programming/0-bing-fa-bian-cheng-de-yi-zhu-gai-lan/</id>
-    <published>2022-01-04T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.045Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Matery 建站</title>
-    <link href="https://captain-tu.github.io/2022/01/02/hexo-matery/"/>
-    <id>https://captain-tu.github.io/2022/01/02/hexo-matery/</id>
-    <published>2022-01-01T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.029Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文主要内容为&lt;code&gt;Hexo&lt;/code&gt;博客主题&lt;code&gt;Matery&lt;/code&gt;在本网站的一些使用情况和改动，&lt;strong&gt;作者&lt;/strong&gt;将对本网站的建立过程进行记录，记录内容主要涵盖&lt;strong&gt;主题原作者&lt;/stron</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="https://captain-tu.github.io/categories/Hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://captain-tu.github.io/2022/01/01/hello-world/"/>
-    <id>https://captain-tu.github.io/2022/01/01/hello-world/</id>
-    <published>2021-12-31T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.017Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="https://captain-tu.github.io/categories/Hexo/"/>
     
     
   </entry>

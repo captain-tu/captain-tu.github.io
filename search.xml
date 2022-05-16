@@ -194,6 +194,25 @@
     
     
     <entry>
+      <title>LeetCode 算法题目</title>
+      <link href="/2022/02/28/leetcode/01-shua-ti-ji-lu/"/>
+      <url>/2022/02/28/leetcode/01-shua-ti-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>算法彰显着个人的编码能力、思维能力以及个人的数学素养。本篇记录LeetCode上刷过的部分题目，用于加强对算法和数据结构知识的了解和巩固。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>分布式高性能可定制化统一发号器</title>
       <link href="/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
       <url>/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</url>
@@ -261,6 +280,44 @@
       <categories>
           
           <category> Spring Framework </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构 栈和队列</title>
+      <link href="/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/"/>
+      <url>/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>堆栈和队列是两种特殊的线性表，堆栈的主要特点是只能在栈顶操作，也就是遵循先进后出的原则，队列的主要特点是只能在一端插入，另一端删除，也就是遵循先进先出的原则。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Data Structures </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构 线性表</title>
+      <link href="/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/"/>
+      <url>/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>线性表是我们日常工作中最简单也最常用的一种数据结构，它的最基本的特点就是每个数据元素最多只能有一个直接前驱和一个直接后驱，只有第一个元素没有直接前驱，而最后一个元素也没有直接后驱。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Data Structures </category>
           
       </categories>
       

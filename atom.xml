@@ -263,6 +263,32 @@
   </entry>
   
   <entry>
+    <title>LeetCode 算法题目</title>
+    <link href="https://captain-tu.github.io/2022/02/28/leetcode/01-shua-ti-ji-lu/"/>
+    <id>https://captain-tu.github.io/2022/02/28/leetcode/01-shua-ti-ji-lu/</id>
+    <published>2022-02-27T16:00:00.000Z</published>
+    <updated>2022-05-16T14:05:58.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;算法彰显着个人的编码能力、思维能力以及个人的数学素养。本篇记录LeetCode上刷过的部分题目，用于加强对算法和数据结构知识的了解和巩固。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://captain-tu.github.io/categories/LeetCode/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>分布式高性能可定制化统一发号器</title>
     <link href="https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
     <id>https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</id>
@@ -361,6 +387,58 @@
   </entry>
   
   <entry>
+    <title>数据结构 栈和队列</title>
+    <link href="https://captain-tu.github.io/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/"/>
+    <id>https://captain-tu.github.io/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/</id>
+    <published>2022-01-12T16:00:00.000Z</published>
+    <updated>2022-05-16T13:53:47.152Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;堆栈和队列是两种特殊的线性表，堆栈的主要特点是只能在栈顶操作，也就是遵循先进后出的原则，队列的主要特点是只能在一端插入，另一端删除，也就是遵循先进先出的原则。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Data Structures" scheme="https://captain-tu.github.io/categories/Data-Structures/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构 线性表</title>
+    <link href="https://captain-tu.github.io/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/"/>
+    <id>https://captain-tu.github.io/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/</id>
+    <published>2022-01-11T16:00:00.000Z</published>
+    <updated>2022-05-16T13:50:45.195Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;线性表是我们日常工作中最简单也最常用的一种数据结构，它的最基本的特点就是每个数据元素最多只能有一个直接前驱和一个直接后驱，只有第一个元素没有直接前驱，而最后一个元素也没有直接后驱。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Data Structures" scheme="https://captain-tu.github.io/categories/Data-Structures/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java 并发编程的艺术（五）（Java中的锁）</title>
     <link href="https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/"/>
     <id>https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</id>
@@ -414,78 +492,6 @@
     <id>https://captain-tu.github.io/2022/01/09/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/</id>
     <published>2022-01-08T16:00:00.000Z</published>
     <updated>2022-05-07T11:26:52.075Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（三）（Java内存模型一）</title>
-    <link href="https://captain-tu.github.io/2022/01/08/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/"/>
-    <id>https://captain-tu.github.io/2022/01/08/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/</id>
-    <published>2022-01-07T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.069Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（二）（并发机制的底层实现）</title>
-    <link href="https://captain-tu.github.io/2022/01/07/the-art-of-java-concurrency-programming/2-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-ji-zhi-de-di-ceng-shi-xian/"/>
-    <id>https://captain-tu.github.io/2022/01/07/the-art-of-java-concurrency-programming/2-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-ji-zhi-de-di-ceng-shi-xian/</id>
-    <published>2022-01-06T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.062Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（一）（并发编程的挑战）</title>
-    <link href="https://captain-tu.github.io/2022/01/06/the-art-of-java-concurrency-programming/1-bing-fa-bian-cheng-de-yi-zhu-bing-fa-bian-cheng-de-tiao-zhan/"/>
-    <id>https://captain-tu.github.io/2022/01/06/the-art-of-java-concurrency-programming/1-bing-fa-bian-cheng-de-yi-zhu-bing-fa-bian-cheng-de-tiao-zhan/</id>
-    <published>2022-01-05T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.055Z</updated>
     
     
       

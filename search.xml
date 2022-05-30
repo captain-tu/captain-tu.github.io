@@ -42,6 +42,25 @@
     
     
     <entry>
+      <title>Camunda Quick Start</title>
+      <link href="/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
+      <url>/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>This tutorial guides you through modeling and implementing your first workflow with the Camunda Platform. In this guide, you’ll choose between implementing executable processes in Java or JavaScript (NodeJS) using one of Camunda’s ready-to-go task clients.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Camunda </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Nacos 服务注册发现和配置</title>
       <link href="/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/"/>
       <url>/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/</url>
@@ -52,6 +71,63 @@
       <categories>
           
           <category> Nacos </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ElasticSearch 基本概念（二）</title>
+      <link href="/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/"/>
+      <url>/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI 商业智能等。本文会逐步引导大家进入 elasticsearch 的世界，初步窥探它的使用。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Elastic </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ElasticSearch 基本概念（一）</title>
+      <link href="/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/"/>
+      <url>/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI 商业智能等。本文会逐步引导大家进入 elasticsearch 的世界，初步窥探它的使用。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Elastic </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ElasticSearch 介绍及下载安装</title>
+      <link href="/2022/06/05/elastic/01-elasticsearch-jie-shao/"/>
+      <url>/2022/06/05/elastic/01-elasticsearch-jie-shao/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI 商业智能等。本文会逐步引导大家进入 elasticsearch 的世界，初步窥探它的使用。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Elastic </category>
           
       </categories>
       
@@ -217,7 +293,7 @@
       <link href="/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
       <url>/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>本文内容主要涉及可定制化的统一发号器的解决方案及实现过程。统一发号器的方案前提是必须满足业务需求，支持定制化，同时需要满足分布式高性能的要求。</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>本文内容主要涉及可定制化的统一发号器的解决方案及实现过程。统一发号器的方案前提是必须满足业务需求，支持定制化，同时需要满足分布式高性能的要求。</p></blockquote><p><img src="/images/distribute/%E7%BB%9F%E4%B8%80%E5%8F%91%E5%8F%B7%E5%99%A8%E6%96%B9%E6%A1%88%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="统一发号器方案示意图"></p>]]></content>
       
       
       <categories>

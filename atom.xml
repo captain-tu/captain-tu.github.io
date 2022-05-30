@@ -69,6 +69,30 @@
   </entry>
   
   <entry>
+    <title>Camunda Quick Start</title>
+    <link href="https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
+    <id>https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</id>
+    <published>2022-06-19T16:00:00.000Z</published>
+    <updated>2022-05-30T14:49:05.902Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;This tutorial guides you through modeling and implementing your first workflow with the Camunda Platform. In this guide,</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Nacos 服务注册发现和配置</title>
     <link href="https://captain-tu.github.io/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/"/>
     <id>https://captain-tu.github.io/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/</id>
@@ -88,6 +112,78 @@
     
     
     <category term="Nacos" scheme="https://captain-tu.github.io/categories/Nacos/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 基本概念（二）</title>
+    <link href="https://captain-tu.github.io/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/</id>
+    <published>2022-06-06T16:00:00.000Z</published>
+    <updated>2022-05-30T15:12:49.075Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 基本概念（一）</title>
+    <link href="https://captain-tu.github.io/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/</id>
+    <published>2022-06-05T16:00:00.000Z</published>
+    <updated>2022-05-30T15:11:57.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 介绍及下载安装</title>
+    <link href="https://captain-tu.github.io/2022/06/05/elastic/01-elasticsearch-jie-shao/"/>
+    <id>https://captain-tu.github.io/2022/06/05/elastic/01-elasticsearch-jie-shao/</id>
+    <published>2022-06-04T16:00:00.000Z</published>
+    <updated>2022-05-30T14:50:41.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
     
     
   </entry>
@@ -293,7 +389,7 @@
     <link href="https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
     <id>https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</id>
     <published>2022-02-14T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.009Z</updated>
+    <updated>2022-05-30T14:37:33.089Z</updated>
     
     
       
@@ -303,7 +399,7 @@
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;本文内容主要涉及可定制化的统一发号器的解决方案及实现过程。统一发号器的方案前提是必须满足业务需求，支持定制化，同时需要满足分布式高性能的要求。&lt;/p&gt;
 &lt;/blockquote&gt;
-</summary>
+&lt;p&gt;&lt;img</summary>
         
       
     
@@ -408,104 +504,6 @@
     
     
     <category term="Data Structures" scheme="https://captain-tu.github.io/categories/Data-Structures/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构 线性表</title>
-    <link href="https://captain-tu.github.io/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/"/>
-    <id>https://captain-tu.github.io/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/</id>
-    <published>2022-01-11T16:00:00.000Z</published>
-    <updated>2022-05-16T13:50:45.195Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;线性表是我们日常工作中最简单也最常用的一种数据结构，它的最基本的特点就是每个数据元素最多只能有一个直接前驱和一个直接后驱，只有第一个元素没有直接前驱，而最后一个元素也没有直接后驱。&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="Data Structures" scheme="https://captain-tu.github.io/categories/Data-Structures/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（五）（Java中的锁）</title>
-    <link href="https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/"/>
-    <id>https://captain-tu.github.io/2022/01/11/the-art-of-java-concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</id>
-    <published>2022-01-10T16:00:00.000Z</published>
-    <updated>2022-05-09T12:46:24.396Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（四）（Java并发编程基础）</title>
-    <link href="https://captain-tu.github.io/2022/01/10/the-art-of-java-concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/"/>
-    <id>https://captain-tu.github.io/2022/01/10/the-art-of-java-concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/</id>
-    <published>2022-01-09T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.079Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java 并发编程的艺术（三）（Java内存模型二）</title>
-    <link href="https://captain-tu.github.io/2022/01/09/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/"/>
-    <id>https://captain-tu.github.io/2022/01/09/the-art-of-java-concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/</id>
-    <published>2022-01-08T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.075Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文为&lt;strong&gt;《Java</summary>
-        
-      
-    
-    
-    
-    <category term="Java Concurrency" scheme="https://captain-tu.github.io/categories/Java-Concurrency/"/>
     
     
   </entry>

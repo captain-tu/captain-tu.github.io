@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-05-15T09:49:25.898Z</updated>
+  <updated>2022-06-05T08:48:45.551Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mahout 推荐算法实战</title>
+    <link href="https://captain-tu.github.io/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/"/>
+    <id>https://captain-tu.github.io/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/</id>
+    <published>2022-07-02T16:00:00.000Z</published>
+    <updated>2022-06-05T08:48:45.551Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Apache Mahout 是 Apache Software</summary>
+        
+      
+    
+    
+    
+    <category term="Recommend" scheme="https://captain-tu.github.io/categories/Recommend/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>推荐系统及推荐算法介绍</title>
+    <link href="https://captain-tu.github.io/2022/07/02/recommend/01-tui-jian-xi-tong-ji-tui-jian-suan-fa-jie-shao/"/>
+    <id>https://captain-tu.github.io/2022/07/02/recommend/01-tui-jian-xi-tong-ji-tui-jian-suan-fa-jie-shao/</id>
+    <published>2022-07-01T16:00:00.000Z</published>
+    <updated>2022-06-05T08:41:00.862Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;互联网时代信息量已然处于爆炸状态，若是将所有内容都放在网站首页上用户是无从阅读的，信息的利用率将会十分低下。因此我们需要推荐系统来帮助用户过滤掉低价值的信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Recommend" scheme="https://captain-tu.github.io/categories/Recommend/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>XXL-JOB 分布式JOB调度平台 接入集成</title>
@@ -69,6 +119,54 @@
   </entry>
   
   <entry>
+    <title>新一代实时计算平台 Flink</title>
+    <link href="https://captain-tu.github.io/2022/06/25/flink/01-flink-jie-shao/"/>
+    <id>https://captain-tu.github.io/2022/06/25/flink/01-flink-jie-shao/</id>
+    <published>2022-06-24T16:00:00.000Z</published>
+    <updated>2022-06-01T14:51:24.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data</summary>
+        
+      
+    
+    
+    
+    <category term="Flink" scheme="https://captain-tu.github.io/categories/Flink/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Camunda Modeler BPMN</title>
+    <link href="https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/"/>
+    <id>https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/</id>
+    <published>2022-06-20T16:00:00.000Z</published>
+    <updated>2022-06-14T14:54:32.116Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;A BPMN diagram is used to visually outline the structure and flow of a process. As a result, the process can be more easily</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Camunda Quick Start</title>
     <link href="https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
     <id>https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</id>
@@ -118,8 +216,8 @@
   
   <entry>
     <title>ElasticSearch 基本概念（二）</title>
-    <link href="https://captain-tu.github.io/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/"/>
-    <id>https://captain-tu.github.io/2022/06/07/elastic/03-elasticsearch-ji-ben-gai-nian/</id>
+    <link href="https://captain-tu.github.io/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/</id>
     <published>2022-06-06T16:00:00.000Z</published>
     <updated>2022-05-30T15:12:49.075Z</updated>
     
@@ -141,9 +239,33 @@
   </entry>
   
   <entry>
+    <title>ElasticSearch 深入搜索</title>
+    <link href="https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/"/>
+    <id>https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/</id>
+    <published>2022-06-06T16:00:00.000Z</published>
+    <updated>2022-06-05T15:18:52.397Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本章会解释如何索引和查询我们的数据让我们能利用词的相似度（word proximity）、部分匹配（partial matching）、模糊匹配（fuzzy matching）以及语言感知（language</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>ElasticSearch 基本概念（一）</title>
-    <link href="https://captain-tu.github.io/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/"/>
-    <id>https://captain-tu.github.io/2022/06/06/elastic/02-elasticsearch-ji-ben-gai-nian/</id>
+    <link href="https://captain-tu.github.io/2022/06/06/elasticsearch/02-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/2022/06/06/elasticsearch/02-elasticsearch-ji-ben-gai-nian/</id>
     <published>2022-06-05T16:00:00.000Z</published>
     <updated>2022-05-30T15:11:57.919Z</updated>
     
@@ -166,8 +288,8 @@
   
   <entry>
     <title>ElasticSearch 介绍及下载安装</title>
-    <link href="https://captain-tu.github.io/2022/06/05/elastic/01-elasticsearch-jie-shao/"/>
-    <id>https://captain-tu.github.io/2022/06/05/elastic/01-elasticsearch-jie-shao/</id>
+    <link href="https://captain-tu.github.io/2022/06/05/elasticsearch/01-elasticsearch-jie-shao/"/>
+    <id>https://captain-tu.github.io/2022/06/05/elasticsearch/01-elasticsearch-jie-shao/</id>
     <published>2022-06-04T16:00:00.000Z</published>
     <updated>2022-05-30T14:50:41.563Z</updated>
     
@@ -380,130 +502,6 @@
     
     
     <category term="LeetCode" scheme="https://captain-tu.github.io/categories/LeetCode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分布式高性能可定制化统一发号器</title>
-    <link href="https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/"/>
-    <id>https://captain-tu.github.io/2022/02/15/distribute/01-tong-yi-fa-hao-qi/</id>
-    <published>2022-02-14T16:00:00.000Z</published>
-    <updated>2022-05-30T14:37:33.089Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文内容主要涉及可定制化的统一发号器的解决方案及实现过程。统一发号器的方案前提是必须满足业务需求，支持定制化，同时需要满足分布式高性能的要求。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="Distribute" scheme="https://captain-tu.github.io/categories/Distribute/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Spring核心 MVC请求流程</title>
-    <link href="https://captain-tu.github.io/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/"/>
-    <id>https://captain-tu.github.io/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/</id>
-    <published>2022-02-02T16:00:00.000Z</published>
-    <updated>2022-05-14T15:00:30.230Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Spring MVC 是 Spring 在 Spring Container Core 和 AOP 等技术基础上，遵循 Web MVC 的规范推出的 Web 开发框架，目的是为了简化 Java 栈的 Web</summary>
-        
-      
-    
-    
-    
-    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Spring 核心 面向切面编程</title>
-    <link href="https://captain-tu.github.io/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/"/>
-    <id>https://captain-tu.github.io/2022/02/02/spring/framework/02-spring-he-xin-xi-lie-er-qie-mian-bian-cheng/</id>
-    <published>2022-02-01T16:00:00.000Z</published>
-    <updated>2022-05-15T08:38:42.519Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;面向切面编程（&lt;code&gt;AOP—Aspect Oriented</summary>
-        
-      
-    
-    
-    
-    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Spring核心 控制反转</title>
-    <link href="https://captain-tu.github.io/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/"/>
-    <id>https://captain-tu.github.io/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/</id>
-    <published>2022-01-31T16:00:00.000Z</published>
-    <updated>2022-05-14T15:00:17.525Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;控制反转&lt;/strong&gt;（&lt;code&gt;Ioc&lt;/code&gt;—&lt;code&gt;Inversion of</summary>
-        
-      
-    
-    
-    
-    <category term="Spring Framework" scheme="https://captain-tu.github.io/categories/Spring-Framework/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构 栈和队列</title>
-    <link href="https://captain-tu.github.io/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/"/>
-    <id>https://captain-tu.github.io/2022/01/13/data-structures-and-algorithms/02-shu-ju-jie-gou-zhi-zhan-he-dui-lie/</id>
-    <published>2022-01-12T16:00:00.000Z</published>
-    <updated>2022-05-16T13:53:47.152Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;堆栈和队列是两种特殊的线性表，堆栈的主要特点是只能在栈顶操作，也就是遵循先进后出的原则，队列的主要特点是只能在一端插入，另一端删除，也就是遵循先进先出的原则。&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="Data Structures" scheme="https://captain-tu.github.io/categories/Data-Structures/"/>
     
     
   </entry>

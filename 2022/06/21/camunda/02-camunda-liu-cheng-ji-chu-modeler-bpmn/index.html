@@ -481,7 +481,7 @@ A BPMN diagram is used to visually outline the structure and flow of a process. 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    736
+                    1.4k
                 </div>
                 
 
@@ -530,7 +530,22 @@ A BPMN diagram is used to visually outline the structure and flow of a process. 
 <p>For the engine, a manual task is handled as a pass-through activity, automatically continuing the process at the moment the process instance arrives.</p>
 <p>task</p>
 <p>Manual tasks have no real benefit for automating processes. Manual tasks instead provide insights into the tasks that are performed outside of the process engine.</p>
-<h2 id="Gateways"><a href="#Gateways" class="headerlink" title="Gateways"></a>Gateways</h2><h3 id="Exclusive-gateway"><a href="#Exclusive-gateway" class="headerlink" title="Exclusive gateway"></a>Exclusive gateway</h3><h3 id="Parallel-gateway"><a href="#Parallel-gateway" class="headerlink" title="Parallel gateway"></a>Parallel gateway</h3><h3 id="Event-based-gateway"><a href="#Event-based-gateway" class="headerlink" title="Event-based gateway"></a>Event-based gateway</h3><h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><h2 id="Subprocesses"><a href="#Subprocesses" class="headerlink" title="Subprocesses"></a>Subprocesses</h2><h2 id="Markers"><a href="#Markers" class="headerlink" title="Markers"></a>Markers</h2>
+<h2 id="Gateways"><a href="#Gateways" class="headerlink" title="Gateways"></a>Gateways</h2><h3 id="Exclusive-gateway"><a href="#Exclusive-gateway" class="headerlink" title="Exclusive gateway"></a>Exclusive gateway</h3><p><strong>独占网关</strong>（也称为 <code>XOR 网关</code>，或者更专业地说，称为基于数据的<code>专用网关</code>）用于对流程中的决策进行建模。当执行到达此网关时，将按定义的顺序评估所有传出序列流。选择条件计算结果为<code>true</code>的序列流（或者没有设置条件，在概念上在序列流上定义了<code>true</code>值）以继续该过程。</p>
+<p>使用独占网关时，仅选择一个序列流。如果多个序列流具有计算结果为<code>true</code>的条件，则以独占方式选择 XML 中定义的第一个序列流以继续该过程。</p>
+<p>如果无法选择任何序列流（没有条件的计算结果为<code>true</code>），这将导致运行时异常，除非您定义了默认流。</p>
+<h3 id="Parallel-gateway"><a href="#Parallel-gateway" class="headerlink" title="Parallel gateway"></a>Parallel gateway</h3><p>网关还可用于对进程中的并发性进行建模。在流程模型中引入并发性的最直接的网关是<strong>并行网关</strong>，它允许分叉到多个执行路径或连接多个传入的执行路径。</p>
+<p>并行网关的功能基于传入和传出序列流：<br>fork：并行跟踪所有传出序列流，为每个序列流创建一个并发执行。<br>join：到达并行网关的所有并发执行在网关处等待，直到每个传入序列流的执行到达。然后，该过程继续通过加入网关。</p>
+<blockquote>
+<p>注意：在 Camunda 的并行网关实现中，一旦以下情况成立，网关就会触发：到达的令牌数等于传入序列流的数量。不需要在每个传入流上都有令牌到达。</p>
+</blockquote>
+<h3 id="Event-based-gateway"><a href="#Event-based-gateway" class="headerlink" title="Event-based gateway"></a>Event-based gateway</h3><p>基于事件的网关允许您根据事件做出决策。网关的每个传出序列流都需要连接到一个中间捕获事件。当流程执行到达基于事件的网关时，网关的行为类似于等待状态：执行挂起。此外，还会为每个传出序列流创建一个事件订阅。</p>
+<p>请注意，从基于事件的网关流流出的序列流与普通序列流不同。这些序列流从未实际<code>执行</code>。相反，它们允许流程引擎确定到达基于事件的网关的执行需要订阅哪些事件。以下限制适用：</p>
+<ul>
+<li>基于事件的网关必须具有两个或多个传出序列流。</li>
+<li>基于事件的网关后面只能跟有中间缓存事件类型的元素。（引擎尚不支持在基于事件的网关之后接收任务。</li>
+<li>连接到基于事件的网关的中间缓存事件必须具有单个传入序列流。</li>
+</ul>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><h2 id="Subprocesses"><a href="#Subprocesses" class="headerlink" title="Subprocesses"></a>Subprocesses</h2><h2 id="Markers"><a href="#Markers" class="headerlink" title="Markers"></a>Markers</h2>
                 
             </div>
             <hr/>
@@ -643,12 +658,12 @@ A BPMN diagram is used to visually outline the structure and flow of a process. 
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/25/flink/01-flink-jie-shao/">
+                <a href="/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Flink.png" class="responsive-img" alt="新一代实时计算平台 Flink">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Camunda.jpg" class="responsive-img" alt="BPMN 最佳实践">
                         
-                        <span class="card-title">新一代实时计算平台 Flink</span>
+                        <span class="card-title">BPMN 最佳实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -659,14 +674,14 @@ A BPMN diagram is used to visually outline the structure and flow of a process. 
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Flink/" class="post-category">
-                                    Flink
+                            <a href="/categories/Camunda/" class="post-category">
+                                    Camunda
                                 </a>
                             
                             
@@ -846,7 +861,7 @@ A BPMN diagram is used to visually outline the structure and flow of a process. 
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.5k</span>
+                        class="white-color">17.4k</span>
             
             
             

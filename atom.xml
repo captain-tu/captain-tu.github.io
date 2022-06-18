@@ -143,11 +143,35 @@
   </entry>
   
   <entry>
+    <title>BPMN 最佳实践</title>
+    <link href="https://captain-tu.github.io/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/"/>
+    <id>https://captain-tu.github.io/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/</id>
+    <published>2022-06-21T16:00:00.000Z</published>
+    <updated>2022-06-18T14:39:39.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Camunda最佳实践是我们在Camunda工具堆栈上使用BPMN和DMN的浓缩经验，并通过咨询与客户的互动，社区反馈和其他各种场合收集。最佳实践是概念和实际实施信息的混合体。最佳实践代表了我们实际项目经验的当前状态，只要它是可推广的。它们既不是“</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Camunda Modeler BPMN</title>
     <link href="https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/"/>
     <id>https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/</id>
     <published>2022-06-20T16:00:00.000Z</published>
-    <updated>2022-06-14T14:54:32.116Z</updated>
+    <updated>2022-06-18T14:34:28.863Z</updated>
     
     
       
@@ -171,7 +195,7 @@
     <link href="https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
     <id>https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</id>
     <published>2022-06-19T16:00:00.000Z</published>
-    <updated>2022-05-30T14:49:05.902Z</updated>
+    <updated>2022-06-18T14:34:28.858Z</updated>
     
     
       
@@ -476,32 +500,6 @@
     
     
     <category term="Java" scheme="https://captain-tu.github.io/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 算法题目</title>
-    <link href="https://captain-tu.github.io/2022/02/28/leetcode/01-shua-ti-ji-lu/"/>
-    <id>https://captain-tu.github.io/2022/02/28/leetcode/01-shua-ti-ji-lu/</id>
-    <published>2022-02-27T16:00:00.000Z</published>
-    <updated>2022-05-16T14:05:58.452Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;算法彰显着个人的编码能力、思维能力以及个人的数学素养。本篇记录LeetCode上刷过的部分题目，用于加强对算法和数据结构知识的了解和巩固。&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://captain-tu.github.io/categories/LeetCode/"/>
     
     
   </entry>

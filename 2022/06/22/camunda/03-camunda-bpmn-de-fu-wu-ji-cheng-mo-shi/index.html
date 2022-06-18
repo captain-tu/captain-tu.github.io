@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java 并发编程的艺术（三）（Java内存模型二）, Blinkfox&#39;s blog site template">
+    <meta name="keywords" content="BPMN 最佳实践, Blinkfox&#39;s blog site template">
     <meta name="description" content="
-本文为《Java 并发编程的艺术》阅读笔记三，分为上下两部分。主要内容为Java内存模型，分别从volatile、synchronized、原子操作的实现原理三个方面Java并发编程的底层机制。
-
-">
+Camunda最佳实践是我们在Camunda工具堆栈上使用BPMN和DMN的浓缩经验，并通过咨询与客户的互动，社区反馈和其他各种场合收集。最佳实践是概念和实际实施信息的混合体。最佳实践代表了我们实际项目经验的当前状态，只要它是可推广的。它">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -31,7 +29,7 @@
     </style>
 
 
-    <title>Java 并发编程的艺术（三）（Java内存模型二） | Sailor Sinbad</title>
+    <title>BPMN 最佳实践 | Sailor Sinbad</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -337,7 +335,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java 并发编程的艺术（三）（Java内存模型二）</h1>
+                    <h1 class="description center-align post-title">BPMN 最佳实践</h1>
                 </div>
             </div>
         </div>
@@ -461,8 +459,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java-Concurrency/" class="post-category">
-                                Java Concurrency
+                            <a href="/categories/Camunda/" class="post-category">
+                                Camunda
                             </a>
                         
                     </div>
@@ -474,7 +472,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-09
+                    2022-06-22
                 </div>
                 
 
@@ -483,7 +481,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    61
+                    153
                 </div>
                 
 
@@ -504,9 +502,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>本文为<strong>《Java 并发编程的艺术》</strong>阅读笔记三，分为上下两部分。主要内容为Java内存模型，分别从<code>volatile</code>、<code>synchronized</code>、<code>原子操作的实现原理</code>三个方面Java并发编程的底层机制。</p>
+<p>Camunda最佳实践是我们在Camunda工具堆栈上使用BPMN和DMN的浓缩经验，并通过咨询与客户的互动，社区反馈和其他各种场合收集。最佳实践是概念和实际实施信息的混合体。最佳实践代表了我们实际项目经验的当前状态，只要它是可推广的。它们既不是“最终的”（从某种意义上说，我们自己也希望继续学习！），也不一定是你自己情况的最佳方法。</p>
 </blockquote>
-
+<h2 id="服务集成模式"><a href="#服务集成模式" class="headerlink" title="服务集成模式"></a>服务集成模式</h2><h3 id="服务与任务集成"><a href="#服务与任务集成" class="headerlink" title="服务与任务集成"></a>服务与任务集成</h3><h3 id="服务与事件集成"><a href="#服务与事件集成" class="headerlink" title="服务与事件集成"></a>服务与事件集成</h3>
                 
             </div>
             <hr/>
@@ -532,7 +530,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://captain-tu.github.io/2022/01/09/concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/">https://captain-tu.github.io/2022/01/09/concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-2/</a>
+                    <a href="https://captain-tu.github.io/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/">https://captain-tu.github.io/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -619,12 +617,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/10/concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/">
+                <a href="/2022/06/25/flink/01-flink-jie-shao/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Concurrency-Art.png" class="responsive-img" alt="Java 并发编程的艺术（四）（Java并发编程基础）">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Flink.png" class="responsive-img" alt="新一代实时计算平台 Flink">
                         
-                        <span class="card-title">Java 并发编程的艺术（四）（Java并发编程基础）</span>
+                        <span class="card-title">新一代实时计算平台 Flink</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -635,14 +633,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-25
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java-Concurrency/" class="post-category">
-                                    Java Concurrency
+                            <a href="/categories/Flink/" class="post-category">
+                                    Flink
                                 </a>
                             
                             
@@ -659,12 +657,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/08/concurrency-programming/3-bing-fa-bian-cheng-de-yi-zhu-java-nei-cun-mo-xing-1/">
+                <a href="/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Concurrency-Art.png" class="responsive-img" alt="Java 并发编程的艺术（三）（Java内存模型一）">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Camunda.jpg" class="responsive-img" alt="Camunda Modeler BPMN">
                         
-                        <span class="card-title">Java 并发编程的艺术（三）（Java内存模型一）</span>
+                        <span class="card-title">Camunda Modeler BPMN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -675,14 +673,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java-Concurrency/" class="post-category">
-                                    Java Concurrency
+                            <a href="/categories/Camunda/" class="post-category">
+                                    Camunda
                                 </a>
                             
                             

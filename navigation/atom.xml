@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sailor Sinbad</title>
+  
+  <subtitle>Sinbad</subtitle>
+  <link href="https://captain-tu.github.io/navigation/atom.xml" rel="self"/>
+  
+  <link href="https://captain-tu.github.io/navigation/"/>
+  <updated>2022-06-05T08:48:45.551Z</updated>
+  <id>https://captain-tu.github.io/navigation/</id>
+  
+  <author>
+    <name>Sinbad</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mahout 推荐算法实战</title>
+    <link href="https://captain-tu.github.io/navigation/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/"/>
+    <id>https://captain-tu.github.io/navigation/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/</id>
+    <published>2022-07-02T16:00:00.000Z</published>
+    <updated>2022-06-05T08:48:45.551Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Apache Mahout 是 Apache Software</summary>
+        
+      
+    
+    
+    
+    <category term="Recommend" scheme="https://captain-tu.github.io/navigation/categories/Recommend/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>推荐系统及推荐算法介绍</title>
+    <link href="https://captain-tu.github.io/navigation/2022/07/02/recommend/01-tui-jian-xi-tong-ji-tui-jian-suan-fa-jie-shao/"/>
+    <id>https://captain-tu.github.io/navigation/2022/07/02/recommend/01-tui-jian-xi-tong-ji-tui-jian-suan-fa-jie-shao/</id>
+    <published>2022-07-01T16:00:00.000Z</published>
+    <updated>2022-06-19T13:12:38.254Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;互联网时代信息量已然处于爆炸状态，若是将所有内容都放在网站首页上用户是无从阅读的，信息的利用率将会十分低下。因此我们需要推荐系统来帮助用户过滤掉低价值的信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="Recommend" scheme="https://captain-tu.github.io/navigation/categories/Recommend/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XXL-JOB 分布式JOB调度平台 接入集成</title>
+    <link href="https://captain-tu.github.io/navigation/2022/07/01/xxl-job/02-xxl-job-jie-ru-ji-cheng/"/>
+    <id>https://captain-tu.github.io/navigation/2022/07/01/xxl-job/02-xxl-job-jie-ru-ji-cheng/</id>
+    <published>2022-06-30T16:00:00.000Z</published>
+    <updated>2022-05-15T09:49:25.898Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;XXL-JOB&lt;/code&gt;是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="XXL-JOB" scheme="https://captain-tu.github.io/navigation/categories/XXL-JOB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>XXL-JOB 分布式JOB调度平台 介绍</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/30/xxl-job/01-xxl-job-jie-shao/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/30/xxl-job/01-xxl-job-jie-shao/</id>
+    <published>2022-06-29T16:00:00.000Z</published>
+    <updated>2022-05-15T09:49:24.806Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;XXL-JOB&lt;/code&gt;是一个分布式任务调度平台，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。现已开放源代码并接入多家公司线上产品线，开箱即用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="XXL-JOB" scheme="https://captain-tu.github.io/navigation/categories/XXL-JOB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>新一代实时计算平台 Flink</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/25/flink/01-flink-jie-shao/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/25/flink/01-flink-jie-shao/</id>
+    <published>2022-06-24T16:00:00.000Z</published>
+    <updated>2022-06-19T13:12:38.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data</summary>
+        
+      
+    
+    
+    
+    <category term="Flink" scheme="https://captain-tu.github.io/navigation/categories/Flink/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BPMN 最佳实践</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/22/camunda/03-camunda-bpmn-de-fu-wu-ji-cheng-mo-shi/</id>
+    <published>2022-06-21T16:00:00.000Z</published>
+    <updated>2022-06-18T14:39:39.801Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Camunda最佳实践是我们在Camunda工具堆栈上使用BPMN和DMN的浓缩经验，并通过咨询与客户的互动，社区反馈和其他各种场合收集。最佳实践是概念和实际实施信息的混合体。最佳实践代表了我们实际项目经验的当前状态，只要它是可推广的。它们既不是“</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/navigation/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Camunda Modeler BPMN</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/</id>
+    <published>2022-06-20T16:00:00.000Z</published>
+    <updated>2022-06-18T14:34:28.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;A BPMN diagram is used to visually outline the structure and flow of a process. As a result, the process can be more easily</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/navigation/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Camunda Quick Start</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</id>
+    <published>2022-06-19T16:00:00.000Z</published>
+    <updated>2022-06-19T13:12:38.244Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;This tutorial guides you through modeling and implementing your first workflow with the Camunda Platform. In this guide,</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/navigation/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nacos 服务注册发现和配置</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/15/alibaba/nacos/01-nacos-jie-shao-he-jian-dan-ying-yong/</id>
+    <published>2022-06-14T16:00:00.000Z</published>
+    <updated>2022-05-09T13:50:34.610Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Nacos 致力于帮助您发现、配置和管理微服务。Nacos</summary>
+        
+      
+    
+    
+    
+    <category term="Nacos" scheme="https://captain-tu.github.io/navigation/categories/Nacos/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 基本概念（二）</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/</id>
+    <published>2022-06-06T16:00:00.000Z</published>
+    <updated>2022-05-30T15:12:49.075Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/navigation/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 深入搜索</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/07/elasticsearch/04-shen-ru-sou-suo/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/07/elasticsearch/04-shen-ru-sou-suo/</id>
+    <published>2022-06-06T16:00:00.000Z</published>
+    <updated>2022-06-05T15:18:52.397Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本章会解释如何索引和查询我们的数据让我们能利用词的相似度（word proximity）、部分匹配（partial matching）、模糊匹配（fuzzy matching）以及语言感知（language</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/navigation/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 基本概念（一）</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/06/elasticsearch/02-elasticsearch-ji-ben-gai-nian/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/06/elasticsearch/02-elasticsearch-ji-ben-gai-nian/</id>
+    <published>2022-06-05T16:00:00.000Z</published>
+    <updated>2022-05-30T15:11:57.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/navigation/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 介绍及下载安装</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/05/elasticsearch/01-elasticsearch-jie-shao/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/05/elasticsearch/01-elasticsearch-jie-shao/</id>
+    <published>2022-06-04T16:00:00.000Z</published>
+    <updated>2022-05-30T14:50:41.563Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/navigation/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Cloud Gateway 介绍</title>
+    <link href="https://captain-tu.github.io/navigation/2022/06/01/spring/cloud/01-springcloud-gateway/"/>
+    <id>https://captain-tu.github.io/navigation/2022/06/01/spring/cloud/01-springcloud-gateway/</id>
+    <published>2022-05-31T16:00:00.000Z</published>
+    <updated>2022-05-09T13:43:12.060Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为 Spring 生态系统之上的 API 网关的基础知识，该项目包括: Spring 5、 Spring Boot 2 和 Project Reactor。Spring Cloud Gateway 旨在提供一种简单而有效的方法来路由到</summary>
+        
+      
+    
+    
+    
+    <category term="Spring Cloud" scheme="https://captain-tu.github.io/navigation/categories/Spring-Cloud/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sentinel 限流集成和上线改造</title>
+    <link href="https://captain-tu.github.io/navigation/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/"/>
+    <id>https://captain-tu.github.io/navigation/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/</id>
+    <published>2022-04-30T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:51.998Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为项目集成Sentinel进行限流降级的解决方案和上线改造内容。通过对Sentinel的控制台进行深度改造和集成，可以使项目内所有微服务的资源规则能够动态的修改和新增，各个服务可以及时监听并更新规则。本文改造方案基于Nacos配置中心进</summary>
+        
+      
+    
+    
+    
+    <category term="Sentinel" scheme="https://captain-tu.github.io/navigation/categories/Sentinel/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Sentinel 高可用流量控制组件</title>
+    <link href="https://captain-tu.github.io/navigation/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/"/>
+    <id>https://captain-tu.github.io/navigation/2022/04/30/alibaba/sentinel/01-sentinel-gao-ke-yong-liu-liang-kong-zhi-zu-jian/</id>
+    <published>2022-04-29T16:00:00.000Z</published>
+    <updated>2022-06-19T13:12:38.238Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;随着微服务的流行，服务和服务之间的稳定性变得越来越重要。Sentinel</summary>
+        
+      
+    
+    
+    
+    <category term="Sentinel" scheme="https://captain-tu.github.io/navigation/categories/Sentinel/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB 使用问题记录</title>
+    <link href="https://captain-tu.github.io/navigation/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/"/>
+    <id>https://captain-tu.github.io/navigation/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/</id>
+    <published>2022-04-22T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:52.040Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要记录在项目当中集成&lt;code&gt;MongoDB&lt;/code&gt;作为日志存储库时遇到的一些问题。本文将会是一个关于&lt;code&gt;MongoDB&lt;/code&gt;使用的笼统记载，因为这也是作者第一次在项目当中集成&lt;code&gt;MongoDB&lt;/code&gt;，</summary>
+        
+      
+    
+    
+    
+    <category term="MongoDB" scheme="https://captain-tu.github.io/navigation/categories/MongoDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的泛型 详解</title>
+    <link href="https://captain-tu.github.io/navigation/2022/04/02/java/generics/01-java-zhong-de-fan-xing/"/>
+    <id>https://captain-tu.github.io/navigation/2022/04/02/java/generics/01-java-zhong-de-fan-xing/</id>
+    <published>2022-04-01T16:00:00.000Z</published>
+    <updated>2022-05-12T13:59:46.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ava 泛型（generics）是 JDK 5 中引入的一个新特性,</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://captain-tu.github.io/navigation/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB 权威指南</title>
+    <link href="https://captain-tu.github.io/navigation/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/"/>
+    <id>https://captain-tu.github.io/navigation/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/</id>
+    <published>2022-03-31T16:00:00.000Z</published>
+    <updated>2022-05-07T11:26:52.036Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文主要内容为&lt;code&gt;《MongoDB权威指南》&lt;/code&gt;学习整理记录。涉及MongoDB数据库，集合，文档，数据类型等基础知识，以及MongoDB的应用、运维和优化等。&lt;/p&gt;
+&lt;/blockquote&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="MongoDB" scheme="https://captain-tu.github.io/navigation/categories/MongoDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java中的反射 详解</title>
+    <link href="https://captain-tu.github.io/navigation/2022/04/01/java/reflect/01-java-zhong-de-fan-she/"/>
+    <id>https://captain-tu.github.io/navigation/2022/04/01/java/reflect/01-java-zhong-de-fan-she/</id>
+    <published>2022-03-31T16:00:00.000Z</published>
+    <updated>2022-05-12T13:59:04.142Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Java反射就是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；并且能改变它的属性。而这也是Java被视为动态（或准动态，为啥要说是准动态，因为一般而言的动态语言定义是程序运行时，允许</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://captain-tu.github.io/navigation/categories/Java/"/>
+    
+    
+  </entry>
+  
+</feed>

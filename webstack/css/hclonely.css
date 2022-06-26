@@ -36,7 +36,7 @@
 }
 .search-input:focus{
 	outline: none;
-    border: 1px solid #2188ff;
+    border: 1px solid #ff9721;
     -webkit-box-shadow: 0 0 5px 0px rgba(71, 158, 245, 0.5);
     box-shadow: 0 0 5px 0px rgba(71, 158, 245, 0.5);
 }
@@ -59,7 +59,7 @@ input::-webkit-input-placeholder{
     outline: none;
     padding: 0 10px;
 }
-.search-btn:hover{ color: #6b7184 }
+.search-btn:hover{ color: #d4971d }
 .search-btn i { margin: 0 }
 .search-hot-text{
   position: absolute;
@@ -264,14 +264,26 @@ body.night .xe-comment p {
 }
 
 body.night .box2:hover {
-  box-shadow: 0 26px 40px -24px rgb(255, 255, 255);
-  -webkit-box-shadow: 0 26px 40px -24px rgba(130, 130, 130, 0.13);
-  -moz-box-shadow: 0 26px 40px -24px rgba(0, 36, 100, 0.3);
+  box-shadow: 0 0 20px -1px rgb(89, 211, 255);
+  -webkit-box-shadow: 0 0 20px -1px rgb(89, 211, 255);
+  -moz-box-shadow: 0 0 20px -1px rgb(89, 211, 255);
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.14, 1.43);
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease-out;
   background-color: #232323 !important;
+}
+
+body .box2:hover {
+  box-shadow: 0 0 20px -1px rgb(21, 1, 1);
+  -webkit-box-shadow: 0 0 20px -1px rgba(4, 27, 10, 0.13);
+  -moz-box-shadow: 0 0 20px -1px rgba(10, 19, 34, 0.3);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.14, 1.43);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
+  background-color: #5fb6f8 !important;
+  color: #ffffff;
 }
 
 body.night .tpwthwidt .front_37Zqj25,

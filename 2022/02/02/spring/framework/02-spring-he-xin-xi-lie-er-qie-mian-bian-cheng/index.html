@@ -59,7 +59,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/images/R-C.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Sailor Sinbad</span>
                 </a>
@@ -233,7 +233,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/images/R-C.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Sailor Sinbad</div>
         <div class="logo-desc">
@@ -634,8 +634,8 @@
     <span class="token punctuation">&#125;</span>
 
 <span class="token punctuation">&#125;</span></code></pre>
-<p>将记录日志功能解耦为日志切面，它的目标是解耦。进而引出AOP的理念：<strong>就是将分散在各个业务逻辑代码中相同的代码通过横向切割的方式抽取到一个独立的模块中</strong>！<br><img src="/images/spring/framework/spring-framework-aop-4.png" alt="纵向与横向切入"></p>
-<p>OOP面向对象编程，针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程的某个步骤或阶段，以获得逻辑过程的中各部分之间低耦合的隔离效果。这两种设计思想在目标上有着本质的差异。<br><img src="/images/spring/framework/spring-framework-aop-2.png" alt="OOP与AOP比较"></p>
+<p>将记录日志功能解耦为日志切面，它的目标是解耦。进而引出AOP的理念：<strong>就是将分散在各个业务逻辑代码中相同的代码通过横向切割的方式抽取到一个独立的模块中</strong>！<br><img src="/images/R-C.gif" data-original="/images/spring/framework/spring-framework-aop-4.png" alt="纵向与横向切入"></p>
+<p>OOP面向对象编程，针对业务处理过程的实体及其属性和行为进行抽象封装，以获得更加清晰高效的逻辑单元划分。而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程的某个步骤或阶段，以获得逻辑过程的中各部分之间低耦合的隔离效果。这两种设计思想在目标上有着本质的差异。<br><img src="/images/R-C.gif" data-original="/images/spring/framework/spring-framework-aop-2.png" alt="OOP与AOP比较"></p>
 <h3 id="Spring-AOP-术语"><a href="#Spring-AOP-术语" class="headerlink" title="Spring AOP 术语"></a>Spring AOP 术语</h3><hr>
 <p>首先从一些重要的AOP概念和术语开始。这些术语不是Spring特有的：</p>
 <ul>
@@ -664,7 +664,7 @@
 </li>
 </ul>
 <p><strong>环绕通知</strong>是最常用的通知类型。和<code>AspectJ</code>一样，<code>Spring</code>提供所有类型的通知，推荐使用尽可能简单的通知类型来实现需要的功能。例如，如果你只是需要一个方法的返回值来更新缓存，最好使用后置通知而不是环绕通知，尽管环绕通知也能完成同样的事情。用最合适的通知类型可以使得编程模型变得简单，并且能够避免很多潜在的错误。比如，你不需要在<code>JoinPoint</code>上调用用于环绕通知的<code>proceed()</code>方法，就不会有调用的问题。</p>
-<p><img src="/images/spring/framework/spring-framework-aop-3.png" alt="AOP术语联系"></p>
+<p><img src="/images/R-C.gif" data-original="/images/spring/framework/spring-framework-aop-3.png" alt="AOP术语联系"></p>
 <h3 id="Spring-AOP-和-AspectJ"><a href="#Spring-AOP-和-AspectJ" class="headerlink" title="Spring AOP 和 AspectJ"></a>Spring AOP 和 AspectJ</h3><hr>
 <p><code>AspectJ</code>是一个<code>Java</code>实现的AOP框架，它能够对Java代码进行AOP编译（一般在编译期进行），让Java代码具有AspectJ的AOP功能（当然需要特殊的编译器） 可以这样说AspectJ是目前实现AOP框架中最成熟，功能最丰富的语言，更幸运的是，AspectJ与Java程序完全兼容，几乎是无缝关联，因此对于有java编程基础的工程师，上手和使用都非常容易。</p>
 <ul>
@@ -677,7 +677,7 @@
 <p>对于这个过程，一般分为动态织入和静态织入： </p>
 <ul>
 <li><code>动态织入</code>的方式是<strong>在运行时动态将要增强的代码织入到目标类中</strong>，这样往往是通过动态代理技术完成的，如Java JDK的动态代理(Proxy，底层通过反射实现)或者CGLIB的动态代理(底层通过继承实现)，Spring AOP采用的就是基于运行时增强的代理技术。</li>
-<li>ApectJ采用的就是<code>静态织入</code>的方式。ApectJ主要采用的是<strong>编译期织入，在这个期间使用AspectJ的acj编译器(类似javac)把aspect类编译成class字节码后，在java目标类编译时织入，即先编译aspect类再编译目标类</strong>。<br><img src="/images/spring/framework/spring-framework-aop-6.png" alt="ApectJ静态织入示意图"></li>
+<li>ApectJ采用的就是<code>静态织入</code>的方式。ApectJ主要采用的是<strong>编译期织入，在这个期间使用AspectJ的acj编译器(类似javac)把aspect类编译成class字节码后，在java目标类编译时织入，即先编译aspect类再编译目标类</strong>。<br><img src="/images/R-C.gif" data-original="/images/spring/framework/spring-framework-aop-6.png" alt="ApectJ静态织入示意图"></li>
 </ul>
 <h2 id="AOP-配置方式"><a href="#AOP-配置方式" class="headerlink" title="AOP 配置方式"></a>AOP 配置方式</h2><h2 id="AOP-使用问题记录"><a href="#AOP-使用问题记录" class="headerlink" title="AOP 使用问题记录"></a>AOP 使用问题记录</h2>
                 
@@ -795,7 +795,7 @@
                 <a href="/2022/02/03/spring/framework/03-spring-he-xin-xi-lie-san-mvc-qing-qiu-liu-cheng/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Spring.png" class="responsive-img" alt="Spring核心 MVC请求流程">
+                        <img src="/images/R-C.gif" data-original="/images/%E5%B0%81%E9%9D%A2/Spring.png" class="responsive-img" alt="Spring核心 MVC请求流程">
                         
                         <span class="card-title">Spring核心 MVC请求流程</span>
                     </div>
@@ -835,7 +835,7 @@
                 <a href="/2022/02/01/spring/framework/01-spring-he-xin-xi-lie-yi-kong-zhi-fan-zhuan/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Spring.png" class="responsive-img" alt="Spring核心 控制反转">
+                        <img src="/images/R-C.gif" data-original="/images/%E5%B0%81%E9%9D%A2/Spring.png" class="responsive-img" alt="Spring核心 控制反转">
                         
                         <span class="card-title">Spring核心 控制反转</span>
                     </div>
@@ -1292,7 +1292,13 @@ $(function () {
 
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 
 
 </html>

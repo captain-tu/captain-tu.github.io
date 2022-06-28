@@ -57,7 +57,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/images/R-C.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Sailor Sinbad</span>
                 </a>
@@ -231,7 +231,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/images/R-C.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Sailor Sinbad</div>
         <div class="logo-desc">
@@ -669,9 +669,9 @@
 <p>当 <code>QPS</code> 超过某个阈值的时候，则采取措施进行流量控制。流量控制的手段包括下面 3 种，对应 FlowRule 中的 controlBehavior 字段：</p>
 <p><code>直接拒绝</code>（RuleConstant.CONTROL_BEHAVIOR_DEFAULT）方式。该方式是默认的流量控制方式，当QPS超过任意规则的阈值后，新的请求就会被立即拒绝，拒绝方式为抛出FlowException。这种方式<strong>适用于对系统处理能力确切已知的情况下</strong>，比如通过压测确定了系统的准确水位时。具体的例子参见 FlowqpsDemo。</p>
 <p><code>冷启动</code>（RuleConstant.CONTROL_BEHAVIOR_WARM_UP）方式。该方式主要用于系统长期处于低水位的情况下，当流量突然增加时，直接把系统拉升到高水位可能瞬间把系统压垮。通过”冷启动”，<strong>让通过的流量缓慢增加</strong>，在一定时间内逐渐增加到阈值上限，给冷系统一个预热的时间，避免冷系统被压垮的情况。具体的例子参见 WarmUpFlowDemo。</p>
-<p>通常冷启动的过程系统允许通过的 QPS 曲线如下图所示：<br><img src="/images/R-C.gif" data-original="https://user-images.githubusercontent.com/9434884/68292392-b5b0aa00-00c6-11ea-86e1-ecacff8aab51.png" alt="Sentinel冷启动限流请求示意图"></p>
+<p>通常冷启动的过程系统允许通过的 QPS 曲线如下图所示：<br><img src="https://user-images.githubusercontent.com/9434884/68292392-b5b0aa00-00c6-11ea-86e1-ecacff8aab51.png" alt="Sentinel冷启动限流请求示意图"></p>
 <p><code>匀速排队</code>（RuleConstant.CONTROL_BEHAVIOR_RATE_LIMITER）方式会严格控制请求通过的间隔时间，也即是<strong>让请求以均匀的速度通过</strong>，对应的是漏桶算法。详细文档可以参考 流量控制 - 匀速器模式，具体的例子可以参见 PaceFlowDemo。</p>
-<p>该方式的作用如下图所示：<br><img src="/images/R-C.gif" data-original="https://user-images.githubusercontent.com/9434884/68292442-d4af3c00-00c6-11ea-8251-d0977366d9b4.png" alt="匀速排队限流方式请求示意图"><br>这种方式主要用于处理间隔性突发的流量，例如消息队列。想象一下这样的场景，在某一秒有大量的请求到来，而接下来的几秒则处于空闲状态，我们希望系统能够在接下来的空闲期间逐渐处理这些请求，而不是在第一秒直接拒绝多余的请求。</p>
+<p>该方式的作用如下图所示：<br><img src="https://user-images.githubusercontent.com/9434884/68292442-d4af3c00-00c6-11ea-8251-d0977366d9b4.png" alt="匀速排队限流方式请求示意图"><br>这种方式主要用于处理间隔性突发的流量，例如消息队列。想象一下这样的场景，在某一秒有大量的请求到来，而接下来的几秒则处于空闲状态，我们希望系统能够在接下来的空闲期间逐渐处理这些请求，而不是在第一秒直接拒绝多余的请求。</p>
 <h3 id="基于调用关系的流量控制"><a href="#基于调用关系的流量控制" class="headerlink" title="基于调用关系的流量控制"></a>基于调用关系的流量控制</h3><hr>
 <p>调用关系包括调用方、被调用方；一个方法又可能会调用其它方法，形成一个调用链路的层次关系。<code>Sentinel</code> 通过 <code>NodeSelectorSlot</code> 建立不同资源间的调用的关系，并且通过 <code>ClusterBuilderSlot</code> 记录每个资源的实时统计信息。</p>
 <p>有了调用链路的统计信息，我们可以衍生出多种流量控制手段。</p>
@@ -740,14 +740,14 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
 <h2 id="网关限流"><a href="#网关限流" class="headerlink" title="网关限流"></a>网关限流</h2><hr>
 <h3 id="网关流控实现原理"><a href="#网关流控实现原理" class="headerlink" title="网关流控实现原理"></a>网关流控实现原理</h3><hr>
 <p>当通过 <code>GatewayRuleManager</code> 加载网关流控规则（<code>GatewayFlowRule</code>）时，无论是否针对请求属性进行限流，<code>Sentinel</code> 底层都会将网关流控规则转化为热点参数规则（<code>ParamFlowRule</code>），存储在 <code>GatewayRuleManager</code> 中，与正常的热点参数规则相隔离。转换时 <code>Sentinel</code> 会根据请求属性配置，为网关流控规则设置参数索引（<code>idx</code>），并同步到生成的热点参数规则中。</p>
-<p>外部请求进入 <code>API Gateway</code> 时会经过 <code>Sentinel</code> 实现的 <code>filter</code>，其中会依次进行 <code>路由/API 分组匹配</code>、<code>请求属性解析</code>和<code>参数组装</code>。<code>Sentinel</code> 会根据配置的网关流控规则来解析请求属性，并依照参数索引顺序组装参数数组，最终传入 <code>SphU.entry(res, args)</code> 中。<code>Sentinel API Gateway Adapter Common</code> 模块向 <code>Slot Chain</code> 中添加了一个 <code>GatewayFlowSlot</code>，专门用来做网关规则的检查。<code>GatewayFlowSlot</code> 会从 <code>GatewayRuleManager</code> 中提取生成的热点参数规则，根据传入的参数依次进行规则检查。若某条规则不针对请求属性，则会在参数最后一个位置置入预设的常量，达到普通流控的效果。<br><img src="/images/R-C.gif" data-original="https://user-images.githubusercontent.com/9434884/58381786-5406f280-7ff4-11e9-9020-016ccaf7ab7d.png" alt="网关流控原理示意图"></p>
+<p>外部请求进入 <code>API Gateway</code> 时会经过 <code>Sentinel</code> 实现的 <code>filter</code>，其中会依次进行 <code>路由/API 分组匹配</code>、<code>请求属性解析</code>和<code>参数组装</code>。<code>Sentinel</code> 会根据配置的网关流控规则来解析请求属性，并依照参数索引顺序组装参数数组，最终传入 <code>SphU.entry(res, args)</code> 中。<code>Sentinel API Gateway Adapter Common</code> 模块向 <code>Slot Chain</code> 中添加了一个 <code>GatewayFlowSlot</code>，专门用来做网关规则的检查。<code>GatewayFlowSlot</code> 会从 <code>GatewayRuleManager</code> 中提取生成的热点参数规则，根据传入的参数依次进行规则检查。若某条规则不针对请求属性，则会在参数最后一个位置置入预设的常量，达到普通流控的效果。<br><img src="https://user-images.githubusercontent.com/9434884/58381786-5406f280-7ff4-11e9-9020-016ccaf7ab7d.png" alt="网关流控原理示意图"></p>
 <h3 id="网关流控控制台"><a href="#网关流控控制台" class="headerlink" title="网关流控控制台"></a>网关流控控制台</h3><hr>
 <p><code>Sentinel 1.6.3</code> 引入了网关流控控制台的支持，用户可以直接在 <code>Sentinel 控制台</code>上查看 <code>API Gateway</code> 实时的 <code>route</code> 和<code>自定义 API 分组</code>监控，管理<code>网关规则</code>和 <code>API 分组配置</code>。</p>
 <p>在 <code>API Gateway</code> 端，用户只需要在原有启动参数的基础上添加如下启动参数即可标记应用为 <code>API Gateway</code> 类型：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 注：通过 Spring Cloud Alibaba Sentinel 自动接入的 API Gateway 整合则无需此参数</span>
 -Dcsp.sentinel.app.type<span class="token operator">=</span><span class="token number">1</span></code></pre>
 
-<p>添加正确的启动参数并有访问量后，我们就可以在 Sentinel 上面看到对应的 API Gateway 了。我们可以查看实时的 route 和自定义 API 分组的监控和调用信息，并针对其配置规则：<br><img src="/images/R-C.gif" data-original="https://camo.githubusercontent.com/48d3f1037415b9214decfbff074dbeb4808971f7ef06a3937cec02523f6a3185/68747470733a2f2f73656e74696e656c67756172642e696f2f626c6f672f7a682d636e2f696d672f73656e74696e656c2d64617368626f6172642d6170692d676174657761792d726f7574652d6c6973742e706e67" alt="网关流控控制台"></p>
+<p>添加正确的启动参数并有访问量后，我们就可以在 Sentinel 上面看到对应的 API Gateway 了。我们可以查看实时的 route 和自定义 API 分组的监控和调用信息，并针对其配置规则：<br><img src="https://camo.githubusercontent.com/48d3f1037415b9214decfbff074dbeb4808971f7ef06a3937cec02523f6a3185/68747470733a2f2f73656e74696e656c67756172642e696f2f626c6f672f7a682d636e2f696d672f73656e74696e656c2d64617368626f6172642d6170692d676174657761792d726f7574652d6c6973742e706e67" alt="网关流控控制台"></p>
 <h3 id="Spring-Cloud-Gateway"><a href="#Spring-Cloud-Gateway" class="headerlink" title="Spring Cloud Gateway"></a>Spring Cloud Gateway</h3><hr>
 <p>从 1.6.0 版本开始，Sentinel 提供了 Spring Cloud Gateway 的适配模块，可以提供两种资源维度的限流：</p>
 <ul>
@@ -960,7 +960,7 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
                 <a href="/2022/05/01/alibaba/sentinel/02-sentinel-xian-liu-ji-cheng-fang-an-he-shang-xian-gai-zao/">
                     <div class="card-image">
                         
-                        <img src="/images/R-C.gif" data-original="/images/%E5%B0%81%E9%9D%A2/Sentinel.png" class="responsive-img" alt="Sentinel 限流集成和上线改造">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Sentinel.png" class="responsive-img" alt="Sentinel 限流集成和上线改造">
                         
                         <span class="card-title">Sentinel 限流集成和上线改造</span>
                     </div>
@@ -1000,7 +1000,7 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
                 <a href="/2022/04/23/mongodb/mongodb-wen-ti-ji-lu/">
                     <div class="card-image">
                         
-                        <img src="/images/R-C.gif" data-original="/images/%E5%B0%81%E9%9D%A2/MongoDB.png" class="responsive-img" alt="MongoDB 使用问题记录">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/MongoDB.png" class="responsive-img" alt="MongoDB 使用问题记录">
                         
                         <span class="card-title">MongoDB 使用问题记录</span>
                     </div>
@@ -1160,7 +1160,7 @@ DefaultNode<span class="token punctuation">(</span>nodeA<span class="token punct
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.4k</span>
+                        class="white-color">18.9k</span>
             
             
             
@@ -1457,13 +1457,7 @@ $(function () {
 
     
 
-<script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                preloadRatio: 1,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</body>
 
 
 </html>

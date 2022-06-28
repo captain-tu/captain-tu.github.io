@@ -195,7 +195,7 @@
     <link href="https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/"/>
     <id>https://captain-tu.github.io/2022/06/20/camunda/01-camunda-liu-cheng-yin-qing-kuai-su-kai-shi/</id>
     <published>2022-06-19T16:00:00.000Z</published>
-    <updated>2022-06-19T13:12:38.244Z</updated>
+    <updated>2022-06-28T14:29:51.920Z</updated>
     
     
       
@@ -203,7 +203,9 @@
         
         
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;This tutorial guides you through modeling and implementing your first workflow with the Camunda Platform. In this guide,</summary>
+&lt;p&gt;本教程将指导您完成使用Camunda平台建模和运行您的第一个工作流程。在本指南中，将使用Camunda的现成任务客户端Java，实现可执行流程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;更多关于流程引擎及Camunda的信息请前往&lt;a</summary>
         
       
     

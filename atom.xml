@@ -167,6 +167,30 @@
   </entry>
   
   <entry>
+    <title>Camunda 企业应用实践</title>
+    <link href="https://captain-tu.github.io/2022/06/22/camunda/04-camunda-qi-ye-ying-yong-shi-jian/"/>
+    <id>https://captain-tu.github.io/2022/06/22/camunda/04-camunda-qi-ye-ying-yong-shi-jian/</id>
+    <published>2022-06-21T16:00:00.000Z</published>
+    <updated>2022-07-24T13:27:29.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本篇主要介绍 Camunda 流程引擎</summary>
+        
+      
+    
+    
+    
+    <category term="Camunda" scheme="https://captain-tu.github.io/categories/Camunda/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Camunda Modeler BPMN</title>
     <link href="https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/"/>
     <id>https://captain-tu.github.io/2022/06/21/camunda/02-camunda-liu-cheng-ji-chu-modeler-bpmn/</id>
@@ -478,30 +502,6 @@
     
     
     <category term="MongoDB" scheme="https://captain-tu.github.io/categories/MongoDB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java中的反射 详解</title>
-    <link href="https://captain-tu.github.io/2022/04/01/java/reflect/01-java-zhong-de-fan-she/"/>
-    <id>https://captain-tu.github.io/2022/04/01/java/reflect/01-java-zhong-de-fan-she/</id>
-    <published>2022-03-31T16:00:00.000Z</published>
-    <updated>2022-05-12T13:59:04.142Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Java反射就是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；并且能改变它的属性。而这也是Java被视为动态（或准动态，为啥要说是准动态，因为一般而言的动态语言定义是程序运行时，允许</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://captain-tu.github.io/categories/Java/"/>
     
     
   </entry>

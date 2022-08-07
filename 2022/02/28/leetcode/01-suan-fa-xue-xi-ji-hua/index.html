@@ -8,11 +8,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java 并发编程的艺术（五）（Java中的锁）, Blinkfox&#39;s blog site template">
-    <meta name="description" content="
-本文为《Java 并发编程的艺术》阅读笔记五，主要内容为Java中的锁。将介绍Java并发包中与锁相关的API和组件，以及这些API和组件的使用方式和实现细节。
+    <meta name="keywords" content="LeetCode 算法学习计划, Blinkfox&#39;s blog site template">
+    <meta name="description" content="算法入门
+在数学和计算机科学之中，算法是一个被定义好的、计算机可施行之指示的有限步骤或次序，常用于计算、数据处理和自动推理。作为一个有效方法，算法被用于计算函数，它包含了一系列定义清晰的指令，并可于有限的时间及空间内清楚的表述出来。
 
-">
+二分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +35,7 @@
     </style>
 
 
-    <title>Java 并发编程的艺术（五）（Java中的锁） | Sailor Sinbad</title>
+    <title>LeetCode 算法学习计划 | Sailor Sinbad</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -435,7 +435,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java 并发编程的艺术（五）（Java中的锁）</h1>
+                    <h1 class="description center-align post-title">LeetCode 算法学习计划</h1>
                 </div>
             </div>
         </div>
@@ -559,8 +559,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java-Concurrency/" class="post-category">
-                                Java Concurrency
+                            <a href="/categories/LeetCode/" class="post-category">
+                                LeetCode
                             </a>
                         
                     </div>
@@ -572,7 +572,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-11
+                    2022-02-28
                 </div>
                 
 
@@ -581,7 +581,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    59
+                    1.4k
                 </div>
                 
 
@@ -601,10 +601,165 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>本文为<strong>《Java 并发编程的艺术》</strong>阅读笔记五，主要内容为Java中的锁。将介绍Java并发包中与锁相关的API和组件，以及这些API和组件的使用方式和实现细节。</p>
+                <h2 id="算法入门"><a href="#算法入门" class="headerlink" title="算法入门"></a>算法入门</h2><blockquote>
+<p>在数学和计算机科学之中，算法是一个被定义好的、计算机可施行之指示的有限步骤或次序，常用于计算、数据处理和自动推理。作为一个有效方法，算法被用于计算函数，它包含了一系列定义清晰的指令，并可于有限的时间及空间内清楚的表述出来。</p>
 </blockquote>
+<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><h4 id="二分查找-1"><a href="#二分查找-1" class="headerlink" title="二分查找"></a>二分查找</h4><p><strong>题目描述</strong>：</p>
+<p>Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<pre class="language-text" data-language="text"><code class="language-text">Example 1:
+Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4
+Explanation: 9 exists in nums and its index is 4
 
+Example 2:
+Input: nums = [-1,0,3,5,9,12], target = 2
+Output: -1
+Explanation: 2 does not exist in nums so return -1
+
+Constraints:
+1、1 &lt;= nums.length &lt;= 104
+2、-104 &lt; nums[i], target &lt; 104
+3、All the integers in nums are unique.
+4、nums is sorted in ascending order.</code></pre>
+
+<p><strong>题解</strong>：</p>
+<p>定义查找的范围 <code>[left, right]</code>，初始查找范围是整个数组。每次取查找范围的中点 <code>mid</code>，比较 <code>nums[mid]</code> 和 <code>target</code> 的大小，如果相等则 <code>mid</code> 即为要寻找的下标，如果不相等则根据 <code>nums[mid]</code> 和 <code>target</code> 的大小关系将查找范围缩小一半。由于每次查找都会将查找范围缩小一半，因此二分查找的时间复杂度是 <code>O(logn)</code>，其中 <code>n</code> 是数组的长度。</p>
+<p>二分查找的条件是查找范围不为空，即 <code>left ≤ right</code>。如果 <code>target</code> 在数组中，二分查找可以保证找到 <code>target</code>，返回 <code>target</code> 在数组中的下标。如果 <code>target</code> 不在数组中，则当 <code>left &gt; right</code> 时结束查找，返回 <code>−1</code>。</p>
+<p><strong>代码实现：</strong></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> nums<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token operator">&lt;=</span>right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">></span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+             right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+<h4 id="第一个错误的版本"><a href="#第一个错误的版本" class="headerlink" title="第一个错误的版本"></a>第一个错误的版本</h4><p><strong>题目描述：</strong></p>
+<p>You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.</p>
+<p>Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.</p>
+<p>You are given an API <code>bool isBadVersion(version)</code> which returns whether version is bad. Implement a function to find the first bad version. You should <code>minimize</code> the number of calls to the API.</p>
+<pre class="language-test" data-language="test"><code class="language-test">Example 1:
+
+Input: n &#x3D; 5, bad &#x3D; 4
+Output: 4
+Explanation:
+call isBadVersion(3) -&gt; false
+call isBadVersion(5) -&gt; true
+call isBadVersion(4) -&gt; true
+Then 4 is the first bad version.
+
+Example 2:
+
+Input: n &#x3D; 1, bad &#x3D; 1
+Output: 1
+ 
+Constraints:
+
+1 &lt;&#x3D; bad &lt;&#x3D; n &lt;&#x3D; 231 - 1</code></pre>
+
+<p><strong>题解</strong>：</p>
+<p>注意到一个性质：当一个版本为正确版本，则该版本之前的所有版本均为正确版本；当一个版本为错误版本，则该版本之后的所有版本均为错误版本。我们可以利用这个性质进行二分查找。</p>
+<p>具体地，将左右边界分别初始化为 <code>1</code> 和 <code>n</code>，其中 <code>n</code> 是给定的版本数量。设定左右边界之后，每次我们都依据左右边界找到其中间的版本，检查其是否为正确版本。如果该版本为正确版本，那么第一个错误的版本必然位于该版本的右侧，我们缩紧左边界；否则第一个错误的版本必然位于该版本及该版本的左侧，我们缩紧右边界。</p>
+<p>这样我们每判断一次都可以缩紧一次边界，而每次缩紧时两边界距离将变为原来的一半，因此我们至多只需要缩紧 <code>O(logn)</code> 次。</p>
+<p><strong>代码实现：</strong></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">firstBadVersion</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> right <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    <span class="token comment">// 循环直至区间左右端点相同</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+        <span class="token comment">// 防止计算时溢出</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isBadVersion</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 答案在区间 [left, mid] 中</span>
+            right <span class="token operator">=</span> mid<span class="token punctuation">;</span> 
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 答案在区间 [mid+1, right] 中</span>
+            left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">// 此时有 left == right，区间缩为一个点，即为答案</span>
+    <span class="token keyword">return</span> left<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h4 id="搜索插入的位置"><a href="#搜索插入的位置" class="headerlink" title="搜索插入的位置"></a>搜索插入的位置</h4><p><strong>题目描述：</strong><br>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<pre class="language-text" data-language="text"><code class="language-text">Example 1:
+
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+
+Example 2:
+
+Input: nums = [1,3,5,6], target = 2
+Output: 1
+
+Example 3:
+
+Input: nums = [1,3,5,6], target = 7
+Output: 4
+ 
+
+Constraints:
+
+1、1 &lt;= nums.length &lt;= 104
+2、-104 &lt;= nums[i] &lt;= 104
+3、nums contains distinct values sorted in ascending order.
+4、-104 &lt;= target &lt;= 104</code></pre>
+
+<p><strong>题解</strong>：</p>
+<p>考虑这个插入的位置 <code>pos</code>，它成立的条件为：</p>
+<center><font color=green>nums[pos−1] < target ≤ nums[pos]</font></center>
+
+
+<p>其中 <code>nums</code> 代表排序数组。由于如果存在这个目标值，我们返回的索引也是 <code>pos</code>，因此我们可以将两个条件合并得出最后的目标：<strong>「在一个有序数组中找第一个大于等于 <code>target</code> 的下标」</strong>。</p>
+<p><strong>代码实现：</strong></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">searchInsert</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> target<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> right <span class="token operator">=</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> ans <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>right <span class="token operator">-</span> left<span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> left<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">&lt;=</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            ans <span class="token operator">=</span> mid<span class="token punctuation">;</span>
+            right <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h3><h4 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h4><p><strong>题目描述：</strong><br>Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.</p>
+<pre class="language-test" data-language="test"><code class="language-test">Example 1:
+
+Input: nums &#x3D; [-4,-1,0,3,10]
+Output: [0,1,9,16,100]
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+
+Example 2:
+
+Input: nums &#x3D; [-7,-3,2,3,11]
+Output: [4,9,9,49,121]
+ 
+
+Constraints:
+1、1 &lt;&#x3D; nums.length &lt;&#x3D; 104
+2、-104 &lt;&#x3D; nums[i] &lt;&#x3D; 104
+3、nums is sorted in non-decreasing order.</code></pre>
+
+<p><strong>题解：</strong></p>
+<p><strong>代码实现：</strong></p>
+<pre class="language-java" data-language="java"><code class="language-java"></code></pre>
+
+<h4 id="轮转数组"><a href="#轮转数组" class="headerlink" title="轮转数组"></a>轮转数组</h4>
                 
             </div>
             <hr/>
@@ -630,7 +785,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://captain-tu.github.io/2022/01/11/concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/">https://captain-tu.github.io/2022/01/11/concurrency-programming/5-bing-fa-bian-cheng-de-yi-zhu-java-zhong-de-suo/</a>
+                    <a href="https://captain-tu.github.io/2022/02/28/leetcode/01-suan-fa-xue-xi-ji-hua/">https://captain-tu.github.io/2022/02/28/leetcode/01-suan-fa-xue-xi-ji-hua/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -717,12 +872,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/12/data-structures-and-algorithms/01-shu-ju-jie-gou-zhi-xian-xing-biao/">
+                <a href="/2022/04/01/java/reflect/01-java-zhong-de-fan-she/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Data%20Structures%20and%20Algorithms.png" class="responsive-img" alt="数据结构 线性表">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Java.png" class="responsive-img" alt="Java中的反射 详解">
                         
-                        <span class="card-title">数据结构 线性表</span>
+                        <span class="card-title">Java中的反射 详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -733,14 +888,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-01
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Data-Structures/" class="post-category">
-                                    Data Structures
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -757,12 +912,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/10/concurrency-programming/4-bing-fa-bian-cheng-de-yi-zhu-java-bing-fa-bian-cheng-ji-chu/">
+                <a href="/2022/02/15/distribute/01-tong-yi-fa-hao-qi/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Concurrency-Art.png" class="responsive-img" alt="Java 并发编程的艺术（四）（Java并发编程基础）">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Signal.png" class="responsive-img" alt="分布式高性能可定制化统一发号器">
                         
-                        <span class="card-title">Java 并发编程的艺术（四）（Java并发编程基础）</span>
+                        <span class="card-title">分布式高性能可定制化统一发号器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -773,14 +928,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java-Concurrency/" class="post-category">
-                                    Java Concurrency
+                            <a href="/categories/Distribute/" class="post-category">
+                                    Distribute
                                 </a>
                             
                             

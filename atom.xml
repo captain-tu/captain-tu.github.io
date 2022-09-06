@@ -265,30 +265,6 @@
   </entry>
   
   <entry>
-    <title>ElasticSearch 深入搜索</title>
-    <link href="https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/"/>
-    <id>https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/</id>
-    <published>2022-06-06T16:00:00.000Z</published>
-    <updated>2022-06-05T15:18:52.397Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本章会解释如何索引和查询我们的数据让我们能利用词的相似度（word proximity）、部分匹配（partial matching）、模糊匹配（fuzzy matching）以及语言感知（language</summary>
-        
-      
-    
-    
-    
-    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>ElasticSearch 基本概念（二）</title>
     <link href="https://captain-tu.github.io/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/"/>
     <id>https://captain-tu.github.io/2022/06/07/elasticsearch/03-elasticsearch-ji-ben-gai-nian/</id>
@@ -302,6 +278,30 @@
         
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Elasticsearch 是一款开源的全文搜索与分析引擎，它拥有高扩展、大容量数据的存储和处理特性，有着近乎实时的处理效果。Elasticsearch 的使用场景还是比较多的，比如 APP 的搜索服务、ELK 实现日志收集与分析、BI</summary>
+        
+      
+    
+    
+    
+    <category term="Elastic" scheme="https://captain-tu.github.io/categories/Elastic/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ElasticSearch 深入搜索</title>
+    <link href="https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/"/>
+    <id>https://captain-tu.github.io/2022/06/07/elasticsearch/04-shen-ru-sou-suo/</id>
+    <published>2022-06-06T16:00:00.000Z</published>
+    <updated>2022-06-05T15:18:52.397Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本章会解释如何索引和查询我们的数据让我们能利用词的相似度（word proximity）、部分匹配（partial matching）、模糊匹配（fuzzy matching）以及语言感知（language</summary>
         
       
     

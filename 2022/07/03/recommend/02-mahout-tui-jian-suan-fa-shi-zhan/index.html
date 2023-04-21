@@ -419,7 +419,7 @@ Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
                 location.href = '/';
             }
@@ -713,17 +713,16 @@ Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/">
+                <a href="/2022/10/15/flink/02-flink-cdc/">
                     <div class="card-image">
                         
-                        <img src="/images/%E5%B0%81%E9%9D%A2/Mahout.png" class="responsive-img" alt="Mahout 推荐算法实战">
+                        <img src="/images/%E5%B0%81%E9%9D%A2/Flink.png" class="responsive-img" alt="Flink-CDC 简介与实践">
                         
-                        <span class="card-title">Mahout 推荐算法实战</span>
+                        <span class="card-title">Flink-CDC 简介与实践</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -733,22 +732,21 @@ Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Recommend/" class="post-category">
-                                    Recommend
+                            <a href="/categories/Flink/" class="post-category">
+                                    Flink
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -914,7 +912,7 @@ Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">Sinbad</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -922,7 +920,7 @@ Apache Mahout 是 Apache Software Foundation（ASF）旗下的一个开源项目
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">22.4k</span>
+                        class="white-color">22.5k</span>
             
             
             

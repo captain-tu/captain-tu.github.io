@@ -6,7 +6,7 @@
   <link href="https://captain-tu.github.io/atom.xml" rel="self"/>
   
   <link href="https://captain-tu.github.io/"/>
-  <updated>2022-06-05T08:48:45.551Z</updated>
+  <updated>2022-11-17T12:04:29.159Z</updated>
   <id>https://captain-tu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flink-CDC 简介与实践</title>
+    <link href="https://captain-tu.github.io/2022/10/15/flink/02-flink-cdc/"/>
+    <id>https://captain-tu.github.io/2022/10/15/flink/02-flink-cdc/</id>
+    <published>2022-10-14T16:00:00.000Z</published>
+    <updated>2022-11-17T12:04:29.159Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;CDC 是 Change Data</summary>
+        
+      
+    
+    
+    
+    <category term="Flink" scheme="https://captain-tu.github.io/categories/Flink/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Mahout 推荐算法实战</title>
@@ -476,32 +500,6 @@
     
     
     <category term="Java" scheme="https://captain-tu.github.io/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MongoDB 权威指南</title>
-    <link href="https://captain-tu.github.io/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/"/>
-    <id>https://captain-tu.github.io/2022/04/01/mongodb/mongodb-quan-wei-zhi-nan/</id>
-    <published>2022-03-31T16:00:00.000Z</published>
-    <updated>2022-05-07T11:26:52.036Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;本文主要内容为&lt;code&gt;《MongoDB权威指南》&lt;/code&gt;学习整理记录。涉及MongoDB数据库，集合，文档，数据类型等基础知识，以及MongoDB的应用、运维和优化等。&lt;/p&gt;
-&lt;/blockquote&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="MongoDB" scheme="https://captain-tu.github.io/categories/MongoDB/"/>
     
     
   </entry>

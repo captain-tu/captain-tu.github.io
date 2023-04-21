@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Flink-CDC 简介与实践</title>
+      <link href="/2022/10/15/flink/02-flink-cdc/"/>
+      <url>/2022/10/15/flink/02-flink-cdc/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>CDC 是 Change Data Capture（变更数据获取）的简称。核心思想是，监测并捕获数据库的变动（包括数据或数据表的插入、更新以及删除等），将这些变更按发生的顺序完整记录下来，写入到消息中间件中以供其他服务进行订阅及消费。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Flink </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mahout 推荐算法实战</title>
       <link href="/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/"/>
       <url>/2022/07/03/recommend/02-mahout-tui-jian-suan-fa-shi-zhan/</url>
